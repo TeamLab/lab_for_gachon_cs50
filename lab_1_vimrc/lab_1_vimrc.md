@@ -5,7 +5,7 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 ## Introduction
 처음 vim editor를 실행시키면 화면 아래 그림과 같이 밋밋하다. 프로그래밍을 하게 되면 에러 메세지를 찾기위한 "코드 줄 번호", 코드 정리를 위한 "indentation", 예약어 구분을 위한 "색깔 표시" 등 다양한 부가 기능이 필요하다. 이를 위해 첫 번째 Lab Assignment에서는 **CS50 서버 계정에서 개인별로 .vimrc을 설정**하는 것을 실습한다.  
 
-![.vimrc 설정이 안되어 있는 vi editor](https://dl.dropboxusercontent.com/u/32816394/assignment/vim_without_vimrc.png)
+![.vimrc 설정이 안되어 있는 vi editor](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_1_vimrc/vim_without_vimrc.png)
 
 
 ## .vimrc 설정 명령어
@@ -43,7 +43,7 @@ LOGIN_ID@cs50:~$ vi ~/.vimrc
 
 접속후 처음 설정하는 경우라면 아래와 같이 아무런 내용이 표시되지 않는 검은 화면만 뜰 것이다.
 
-![.vimrc를 처음 설정할 때, .vimrc 파일 내용](https://dl.dropboxusercontent.com/u/32816394/assignment/first_vimrc.png)
+![.vimrc를 처음 설정할 때, .vimrc 파일 내용](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_1_vimrc/first_vimrc.png)
 
 .vimrc 파일에는 아래 code와 같은 내용을 입력한다. 입력을 위해서는 먼저 편집기 화면이 나오면 <kbd>esc</kbd>을 누르고 알파벳 <kbd>i</kbd> 키를 누르면 입력이 된다. 입력중 지우고 싶은 내용이 나오면 다시 <kbd>esc</kbd>을 누르고 방향키를 사용하여 지우고 싶은 내용 위치로 이동하여 <kbd>x</kbd> 버튼을 누르면 된다. 모든 입력이 끝나면 <kbd>esc</kbd>을 누르고 <kbd>:wq</kbd>을 누르고, <kbd>enter</kbd>를 입력하면 저장과 동시에 vim 에디터가 종료된다.
 
@@ -75,7 +75,7 @@ wget https://raw.githubusercontent.com/blissray/gachon_cs50_lab_assignment/maste
 vi yesterday_test.py
 ``` 
 
-![.vimrc를 처음 설정할 때, .vimrc 파일 내용](https://raw.githubusercontent.com/blissray/gachon_cs50_lab_assignment/master/Lab_1_vimrc/yesterday_test_vi.png)
+![.vimrc를 처음 설정할 때, .vimrc 파일 내용](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_1_vimrc/yesterday_test_vi.png)
 
 위와 같이 코드의 색깔이 다르고, 왼쪽 줄에 숫자가 붙으며, 하단의 파일명과 커서의 위치 등이 제대로 나타난다면 성공적으로 설정 한 것이다. <kbd>esc</kbd> 누른 후 <kbd>:q</kbd>+<kbd>enter</kbd> 를 눌러 vi 에디터를 종료한다.
 

@@ -14,7 +14,7 @@ def addition(a, b):
     # pass
     # ===Modify codes below=============
 
-    result = a+b 
+    result = None
 
     # ==================================
 
@@ -37,7 +37,7 @@ def minus(a, b):
     # pass
     # ===Modify codes below=============
 
-    result = a-b 
+    result = None
 
     # ==================================
 
@@ -60,7 +60,7 @@ def multiplication(a, b):
     # pass
     # ===Modify codes below=============
 
-    result = a*b 
+    result = None
 
     # ==================================
 
@@ -83,14 +83,14 @@ def division(a, b):
     # pass
     # ===Modify codes below=============
 
-    result = a/b 
+    result = None
 
     # ==================================
 
     return result
 
 
-if __name__ == "__main__":
+def main():
     print ("Addition Test")
     print (addition(3,5)) # Expected Result: 8
     print (addition(10,5) == 15) # Expected Result: True
@@ -115,3 +115,7 @@ if __name__ == "__main__":
     print (division(10,5) == 2) # Expected Result: True
     print (division(10,-3) == 0.33333) # Expected Result: False
     print ("division Test Closed \n")
+
+
+if __name__ == "__main__":
+    main()
