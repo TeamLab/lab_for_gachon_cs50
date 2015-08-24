@@ -20,6 +20,7 @@ import unittest
 
 TOKEN_PICKLE_FILE_NAME = "access_token"
 HOST = "cs50.gachon.ac.kr"
+#HOST = "cs50.gachon.ac.kr:8000"
 # HOST = "localhost:8000"
 
 def getArgumentsParser(argv=None):
@@ -213,14 +214,15 @@ def main():
             access_token = getAccessTokenFromServer(email, login_password)
             if (access_token == None): print ("Wrong Email or password. Please, input again.")
 
+    # Make access pickle before end of program
+    makeAccessTokenPickle(access_token, email)
+
     if (actionType == "get"):
         result = getAssignmentTemplateFileFromServer(access_token, assignment_name)
         if (result.status_code == 200):
             is_file_created = makeTemplateFile(result.text)
             if (is_file_created == True):
                 print ("Thank you for using the program. Enjoy Your Assignment - From TeamLab")
-                # Make access pickle before end of program
-                makeAccessTokenPickle(access_token, email)
         elif (result.status_code == 403):
             print (result.text)
             removeExpiredAccessKey()
@@ -232,10 +234,8 @@ def main():
     elif (actionType == "submit"):
         result = submitAssignmentFileToServer(access_token, assignment_name)
         if (result.status_code == 200):
-            print(result.text)
             printTestResults(result.text)
             # Make access pickle before end of program
-            makeAccessTokenPickle(access_token, email)
         elif (result.status_code == 403):
             print (result.text)
             removeExpiredAccessKey()
