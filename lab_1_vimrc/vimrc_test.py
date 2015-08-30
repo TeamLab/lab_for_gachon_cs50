@@ -1,3 +1,5 @@
+# -*- coding: utf8 -*-
+
 from os.path import expanduser
 import os
 
