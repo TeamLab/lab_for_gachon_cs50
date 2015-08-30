@@ -139,12 +139,21 @@ python3.4 submit_assignment.py -submit arithmetic_function.py
 
 본 명령을 실행하여 프로그램의 문법상 에러가 없을 경우, 아래와 같은 형태로 숙제 제출 확인 메세지를 받게된다.
 
-추가적인 ~~~~~~~~~~~~~~
-
-첫 번째 Lab Assignment인 vimrc 제출을 위해서도 아래와 같이 명령어를 입력하자. vimrc 숙제는 .vimrc의 생성과 필요한 설정들이 제대로 입력되었는지 보기 때문에 특별히 다운로드된 "vimrc_test.py" 파일을 수정할 필요는 없다. 만약 숙제 제출에 오류가 발생했다면, 첫 번째 Lab Assignment 문서를 **정독**<sup id="read">[6](#f6)</sup> 하면서 빼먹은 것이 없는지 확인해 보기 바란다.
+```bash
+-------------------- | ---------- | --------------------
+       Function Name |    Passed? |             Feedback
+-------------------- | ---------- | --------------------
+            division |       PASS |             Good Job
+               minus |       PASS |             Good Job
+      multiplication |       PASS |             Good Job
+            addition |       PASS |             Good Job
+-------------------- | ---------- | --------------------
+```
+첫 번째 Lab Assignment인 vimrc 제출을 위해서도 아래와 같이 명령어를 입력하자. vimrc 숙제는 .vimrc의 생성과 필요한 설정들이 제대로 입력되었는지 보기 때문에 특별히 다운로드된 "vimrc_test.py" 파일을 수정할 필요는 없다. 만약 숙제 제출에 오류가 발생했다면, 첫 번째 Lab Assignment 문서를 **정독**<sup id="read">[6](#f6)</sup> 하면서 빼먹은 것이 없는지 확인해 보기 바란다. 참고로 에러가 나왔을 경우 반드시 `vi ~/.vimrc` 명령으로 .vimrc 파일을 수정한 후, `python3.4 vimrc_test.py`와 `python3.4 submit_assignment.py -submit vimrc_test.py` 명령을 순차적으로 입력해야 한다.
 
 ```bash
 python3.4 submit_assignment.py -get vimrc
+python3.4 vimrc_test.py
 python3.4 submit_assignment.py -submit vimrc_test.py
 ```
 
