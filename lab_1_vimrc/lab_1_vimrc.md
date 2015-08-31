@@ -66,7 +66,7 @@ set history=1000            " vi 편집기록 기억갯수 .viminfo에 기록
 설정 확인을 위해서 아래와 같은 명령을 입력하여 예제 코드인 "yesterday_test.py"<sup id="py_file">[5](#f5)</sup> 파일을 다운로드 한다. 아래의 명령중 wget은 리눅스에서 파일을 다운로드 받는 명령이고 뒤에 url은 해당 파일의 위치이다. 
 
 ```bash
-wget https://raw.githubusercontent.com/blissray/gachon_cs50_lab_assignment/master/Lab_1_vimrc/yesterday_test.py
+wget https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_1_vimrc/yesterday_test.py
 ``` 
 
 다운로드가 완료되면, 아래 명령으로 해당 파일의 내용을 확인한다.

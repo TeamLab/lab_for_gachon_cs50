@@ -1,159 +1,108 @@
 #-*- coding: utf-8 -*-
 
-text = "Gachon\nUniversity\nIndustrial\nEngineering\n"
+# ============ 절대 수정하지 말 것 =============
+example_1 = "Gachon University. CS50 Class"
+example_2 = "ACE!! We Are Ace"
+example_3 = """
+Yesterday, all my troubles seemed so far away
+Now it looks as though they're here to stay
+oh, I believe in yesterday
 
-# 1번째 줄 삭제
-def delete_line(text):
+Suddenly, I'm not half the man I used to be
+There's a shadow hanging over me
+Oh, yesterday came suddenly.
+"""
+# ============================================== 
+
+# 단어 지우기 연습하기
+def delete_word():
 
     # Input:
-    #   - 명령어
+    #   - None
     # Output:
-    #   - 명령어를 입력했을 때의 결과값(지정 행 삭제)
+    #   - 수정된 example_1 string
     # Examples:
-    #   >>> delete_line(command)
-    #   Gachon
-    #   University
-    #   Industrial
-    #   >>> delete_line(command)
-    #   University
-    #   Industrial
-    #   Engineering
-
-    delete_text = text
+    #   >>> import vim_editor as ve    
+    #   >>> ve.delete_word()
+    #   Gachon University. Class
     # ===Modify codes below=============
 
-    command = ""
-    result = ""
 
     # ==================================
 
-    return command, result
+    return example_1
 
-# 2행으로 커서 이동, 단어 삭제
-def delete_word(text):
-
+# 단어 바꾸기
+def change_word():
     # Input:
-    #   - move_command : 지정 행으로 이동하는 명령어
-    #   - delete_command : 단어 지우는 명령어
+    #   - None
     # Output:
-    #   - 명령어를 입력했을 때의 결과값(해당 행으로 가서 첫번째 단어 지우기)
+    #   - 수정된 example_2 string
     # Examples:
-    #   >>> delete word(text)
-    #   University
-    #   Industrial
-    #   Engineering
-
-    delete_text = text
+    #   >>> import vim_editor as ve    
+    #   >>> ve.change_word()
+    #   Gachon!! We Are Gachon
     # ===Modify codes below=============
-
-    move_command = ""
-    delete_command = ""
-    result = ""
 
     # ==================================
 
-    return move_command, delete_command, result
+    return example_2
 
-# 1행~2행 복사, 마지막 행에 붙여넣기
-def copy_and_paste_1(text):
-
+# 다섯줄 지우기
+def delete_five_lines():
     # Input:
-    #   -copy_command : 복사 명령어
-    #   -paste_command : 붙여넣기 명령어
+    #   - None
     # Output:
-    #   - 명령어를 입력했을 때의 결과값(지정 행 복사, 붙여넣기)
+    #   - 수정된 example_3 string
     # Examples:
-    #   >>> copy_and_paste_1(text)
-    #   Gachon
-    #   University
-    #   Industrial
-    #   Engineering
-    #   Gachon
-    #   University
-
-    copy_text = text
+    #   >>> import vim_editor as ve    
+    #   >>> ve.delete_five_lines()
+    #   Oh, yesterday came suddenly.
     # ===Modify codes below=============
 
-    copy_command = ""
-    paste_command = ""
-    result = ""
     # ==================================
 
-    return copy_command, paste_command, result
+    return example_3
 
-# 1행 복사 후 5행에 붙여넣기(동시 진행)
-def copy_and_paste_2(text):
-
+# Yesterday => Today로 바꾸기
+def change_word_2():
     # Input:
-    #   - command : 복사, 붙여넣기 동시 명령어
+    #   - None
     # Output:
-    #   - 명령어를 입력했을 때의 결과값(지정 행 복사, 붙여넣기)
+    #   - 수정된 example_3 string
     # Examples:
-    #   >>> copy_and_paste(text, command) #:2co5
-    #   Gachon
-    #   University
-    #   Industrial
-    #   Engineering
-    #   University
-
-    copy_text = text
-
+    #   >>> import vim_editor as ve    
+    #   >>> ve.change_word_2()
+    #   
+    #   Today, all my troubles seemed so far away
+    #   Now it looks as though they're here to stay
+    #   oh, I believe in Today
+    #
+    #   Suddenly, I'm not half the man I used to be
+    #   There's a shadow hanging over me
+    #   Oh, Today came suddenly.
     # ===Modify codes below=============
 
-    command = ""
-    result = ""
-
     # ==================================
+    return example_3
 
-    return result
+# Check Method
+def check_initial_values():
+    return [example_1, example_2, example_3]
 
-#gachon인 단어를 찾아(대문자 소문자 구분 없음) University로 모두 수정하기
-def modify_word():
-    modify_text = "Gachon gAchon gaChon gacHon gachOn gachoN"
+def main():
+    print (delete_word()) # Expected result: Gachon University. Class
+    print (delete_word()== "Gachon University. Class") # Expected result: True
 
-    # Input:
-    #   - command: 문자열 검색 및 수정 명령어
-    # Output:
-    #   - 명령어 입력했을 때의 결과값(문자열 탐색 및 수정)
-    # Examples: gachon 을 new로 수정할 경우
-    #   >>> modify_word()
-    #   new new new new new new
+    print (change_word()) # Gachon!! We Are Gachon
+    print (change_word()== "Gachon!! We Are Gachon") # Expected result: True
 
-    # ===Modify codes below=============
+    print (delete_five_lines()) # Oh, yesterday came suddenly.
+    print (delete_five_lines()=="Oh, yesterday came suddenly.") # Expected result: True
 
-    command = ""
-    result = ""
-
-    # ==================================
-
-    return command, result
+    print (check_initial_values())
+    # ['Gachon University. CS50 Class', 'ACE!! We Are Ace', "\nYesterday, all my troubles seemed so far away\nNow it looks as though they're here to stay\noh, I believe in yesterday\n\nSuddenly, I'm not half the man I used to be\nThere's a shadow hanging over me\nOh, yesterday came suddenly.\n"]
 
 
 if __name__ == "__main__":
-
-    print ("Delete Line Test")
-    print (delete_line(text))
-    print (delete_line(text)==(":4d", "University\nIndustrial\nEngineering\n"))
-    print ("Delete Line Test Closed \n")
-
-    print ("Delete Word Test")
-    print (delete_word(text))
-    print (delete_word(text)==(":2", ":dw", "Gachon\nIndustrial\nEngineering\n"))
-    print ("Delete Word Test Closed \n")
-
-    print ("Copy and Paste First Test")
-    print (copy_and_paste_1(text))
-    print (copy_and_paste_2(text)==(":1,4y", "Gachon\nUniversity\nIndustrial\nEngineering\nGachon\nUniversity\nIndustrial\nEngineering\n"))
-    print ("Copy and Paste First Closed \n")
-
-    print ("Copy and Paste Second Test")
-    print (copy_and_paste_2(text))
-    print (copy_and_paste_2(text)==(":1co5", "Gachon\nUniversity\nIndustrial\nEngineering\nGachon"))
-    print ("Copy and Paste Second Test Closed \n")
-
-    print ("Find and Modify Word Test")
-    print (modify_word())
-    print (modify_word()==("%s/gachon/University/gi", "University\nUniversity\nUniversity\nUniversity\nUniversity\nUniversity"))
-    print ("Find and Modify Word Test Closed \n")
-
-
+    main()
