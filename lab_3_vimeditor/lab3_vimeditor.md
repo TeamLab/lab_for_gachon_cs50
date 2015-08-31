@@ -23,7 +23,7 @@ python3.4 submit_assignment.py -get vimeditor
 5. 마지막으로 커서가 30번째줄 맨 앞쪽에 위치한 상태에서 <kbd>Tab</kbd> 키를 눌러스 `example_1`변수의 들여쓰기를 한 단계 이동해 주자. 
 6. 완성이 되었다면 아래와 유사한 화면을 볼 수 있을 것이다. 
 
-![.vimrc 설정이 안되어 있는 vi editor](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_1_vimrc/vim_without_vimrc.png)
+![.vimrc 설정이 안되어 있는 vi editor](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_3_vimeditor/delete_word.png)
 
 첫 번째 미션을 성공했다. 남은 미션은 간단한 Tip만 알려주겠다. 최선을 다해보자. 
 
