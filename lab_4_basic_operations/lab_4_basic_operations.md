@@ -1,4 +1,4 @@
-Lab #4 - 간단한 연산
+Lab #4 - 간단한 연산 (basic_operations)
 =======
 Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 
@@ -10,72 +10,152 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 ## 숙제 template 파일 다운로드
 먼저 숙제 template 파일을 cs50 서버로 부터 다운로드 받는다. 이미 해보았기 때문에 어렵지 않을 것이다. 로그인 후 나타나는 bash shell에서 다음과 같은 명령을 입력하자.
 ```bash
-python3.4 submit_assignment.py -get vimeditor 
+ python3.4 submit_assignment.py -get basic_operations
 ```  
-
-파일을 간단히 보면 최상단의 "절대 수정하지 말 것" 이라고 적힌 3개의 변수와 4개의 수정해야 할 함수로 이루어 져 있다. 각각의 함수를 수정하기 위해서는 상단의 3개의 변수를 각 함수로 copy&paste 한 후 lab assignment를 진행하여야 한다.
-## delete_word() 함수 수정하기 
-첫 번째 수정해야 할 함수는 `delete_word()` 함수 이다. 이 함수는 `example_1` 이라는 변수를 `delete_word()`로 먼저 이동 한 후, `CS50` 이라고 적힌 글자를 삭제해 주면 된다. 이를 위해 아래의 순서로 파일을 수정해 보자
-
-1. 커서를 활용하여 4번째 줄로 이동하고 <kbd>y</kbd>,<kbd>y</kbd> 를 눌러준다. 참고로 키보드 표시에서 `,`는 순서대로 입력을 의미하고, `+`는 동시에 입력을 의미한다. `yy`는 현재의 줄을 복사하라는 의미이다.
-2. <kbd>esc</kbd>를 누르고 `:29`를 누른후 <kbd>Enter</kbd>를 치면 29번째 줄로 이동하게 된다.
-3. 이동 후, <kbd>p</kbd>를 누르면, 복사한 `example_1="~~~"` 가 30번째 줄에 출력될 것이다. <kbd>p</kbd>는 paste 즉 붙여넣기를 의미한다.
-4. 현재 붙여넣기는 되어 있지만 Indentation (들여쓰기)가 이루어지지 않았다. 다시 한번 기억해야 할 것은 파이썬은 들여쓰기를 잘못할 경우 제대로 동작하지 않는 다는 것이다. 30번째 줄로 이동하여 <kbd>esc</kbd>를 누른 후, <kbd>shift</kbd>+<kbd>i</kbd> 또는 <kbd>i</kbd>를 입력하여 수정 가능 모드로 변경한다.
-5. 마지막으로 커서가 30번째줄 맨 앞쪽에 위치한 상태에서 <kbd>Tab</kbd> 키를 눌러스 `example_1`변수의 들여쓰기를 한 단계 이동해 주자. 
-6. 완성이 되었다면 아래와 유사한 화면을 볼 수 있을 것이다. 
-
-![.vimrc 설정이 안되어 있는 vi editor](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_3_vimeditor/delete_word.png)
-
-첫 번째 미션을 성공했다. 남은 미션은 간단한 Tip만 알려주겠다. 최선을 다해보자. 
-
-## change_word() 함수 수정하기 
-두 번째 함수는 `example_2` 변수를 `change_word()` 함수에 복사 한 후 `ACE` 라는 단어를 `Gachon` 으로 변경 하는 것이다. 다양한 방법들이 가능하겠지만 본 lab assignment에서는 한 단어를 지우는 <kbd>d</kbd>, <kbd>w</kbd> 와 새로 글을 삽입할 때 쓰는 <kbd>i</kbd> 를 이용해서 `ACE`라는 단어를 지우고, `Gachon` 이라는 단어로 변경하기 바란다.
-
-## delete_five_lines() 함수 수정하기 
-세 번째 함수는 `example_3` 변수를 `delete_five_lines()` 함수에 복사 한 후 5문장을 지우는 것이다. 5문장이라고는 하지만 이것 저것 지워야 할 게 많다. 정확히는 마지막 문장만 남겨야 숙제로 인정된다.
-숙제를 위해 알아야 할 것은 한 번에 여러 줄을 복사하고 붙여 넣기 하는 것이다. 이를 위해서 첫 번째로 <kbd>y</kbd>,<kbd>10</kbd>,<kbd>↓</kbd> 라고 누르면 현재 줄을 기준으로 총 11줄이 복사 된다. 본 예제는 6번째 줄로 이동하여 9줄을 복사하고, 63번째줄로 이동하여 붙여넣기를 해보자.
-`example_3`변수의 들여쓰기를 맞춰주자. 이 때 따옴표 세개의 경우 긴 문장의 텍스트 데이터를 저장할 때 쓰는 문자로 첫 줄을 제외한 나머지 줄은 아래처럼 들여쓰기를 하지 않아도 된다.
-```python
-    example_3 = """
-Yesterday, all my troubles seemed so far away
-Now it looks as though they're here to stay
-oh, I believe in yesterday
-
-Suddenly, I'm not half the man I used to be
-There's a shadow hanging over me
-Oh, yesterday came suddenly.
-"""
-```   
-붙여 넣기 후 5문장을 삭제하자. `There's a~`으로 시작하는 줄로 이동하여 <kbd>d</kbd>,<kbd>5</kbd>,<kbd>↑</kbd> 라고 누르면 현재 줄부터 위로 6줄이 지워진다. <kbd>y</kbd>와 마찬가지로 <kbd>d</kbd> 입력후 `숫자`, `화살표`는 삭제 또는 복사할 문자수 또는 줄 수를 의미한다.
-
-## change_word_2() 함수 수정하기 
-마지막이다 `delete_five_lines`함수와 마찬가지로 `example_3` 변수를 `change_word_2` 함수로 이동한다. 이번에 할 것은 함수내에 있는 단어들을 변경하는 것이다. 워드에서는 <kbd>ctrl</kbd>+<kbd>h</kbd>를 누르는 것과 같다고 보면 된다. 이를 위한 명령어는 먼저 <kbd>esc</kbd>를 누르고 `10,100/abc/new/gi` 같이 입력하면 된다. 각각의 의믜는 10과 100은 변경을 할 구역 즉 10번째줄 부터 100번째줄 까지라는 의미이며, abc는 변경될 기존 단어, new는 변경할 새 단어이다. `g`와 `i`는 option인데 `g`는 문장 전체를 다 찾아서 변경하는 것이고 `i`는 대소문자 구분없이 변경하는 것이다. `g`과 없으면 한 줄에 `abc abc abc`가 있을 경우 첫번째 `abc`만 변경한다. 
-본 함수에서는 `yesterday`를 `Today` 바꾸는 것이 숙제이다. `example_3`변수를 보면 알겠지만, yesterday가 대소문자 구분하여 총 3번 나온다. 3번 나온 `yesterday` 단어를 모둔 `Today`로 바꿔주기 바란다. 한가지 유의할 점은 `Today`는 대소문자를 구분하여 채점을 한다. 고로 `Today`는 `today`가 아닌 반드시 첫 자를 대문자로 표시해주자. 
-
-## 제출하기 
-길고 긴 하루였다. 다음과 같은 명령어로 먼저 본인의 파일이 제대로 작동하는 지 보자. 
+위 명령을 실행시키고 로그인 정보를 정확히 입력하하여 파일의 다운로드가  끝났다면 다음과 같은 메세지가 나올 것이다.
 ```bash
-python3.4 vim_editor.py
+basic_operations.py file is created for your basic_operations assignment
+Thank you for using the program. Enjoy Your Assignment - From TeamLab
+``` 
+실제 현재 directory에 파일이 제대로 다운로드 되었는지 확인하기 위해서는 현재 bash shell에서 `ls basic_operations.py`을 입력하면 다음 줄에 `basic_operations.py`에 출력이 될 것이다. `ls`는 `list`의 준말로 directroy에 있는 파일을 표시해주는 명령어로 `ls` 뒤에 `파일명`을 입력하면 해당 파일이 있을 경우, 그 파일명을 다시한번 출력해 준다. `ls`만 입력하면 현재 디렉토리에 있는 모든 명령어를 표시해준다. 자세한 내용은 구글로 가서 `linux ls 명령어` 라고 치면 다양한 페이지에서 설명해 줄 것이다. 
+
+참고로 이제는 작업환경에 대한 용어에 익숙해 져야 한다. 아래는 우리가 주로 사용하는 작업 환경에 대한 설명이다.
+
+분류           | 설명 
+--------       | ---
+bash shell     | putty 프로그램으로 CS50 서버어에 로그인 하자마자 바로 나오는 작업환경을 의미하며, linux라는 OS에 명령어를 입력할 수 있게 해주는 환경. `ls`, `rm` 등 리눅스 OS를 사용하기 위한 명령어를 사용할 수 있음
+python shell    | bash shell에서 `python3.4`를 입력했을 나오는 환경으로 파이썬의 다양한 명령어를 실행 시킬 수 있음
+vim editor       | bash shell 에서 `vi 파일명` 을 입력해주면 나오는 환경으로 윈도우의 메모장과 같은 기능을 제공함. 본 강의의 파이썬 코드 파일은 vim editor에서 수정되는 것을 기본으로 함
+
+## 수정 해야할 함수 종류들
+숙제 파일을 다운로드 후 `vi basic_operations.py` 명령어를 입력하여 숙제 파일을 살펴보자. 코드가 좀 길긴 하지만 기본적인 형태는 lab 2의 `arithmetic_function.py`와 다르지 않다. 본 lab에서 수정해야 할 함수들은 아래와 같다. 
+
+함수           | 설명 
+--------       | ---
+str_to_int      | 문자열 값을 입력받아 정수형으로 바꾸는 함수
+str_to_float    | 문자열 값을 입력받아 실수형으로 바꾸는 함수
+number_to_str   | 정수형 또는 실수형의 값을 입력받아 문자열 값으로 바꾸는 함수 
+add_string_number   | 문자열 값과 숫자형 값을 입력받아, 두 값을 문자열 값으로 연결하는 함수 
+add_string_string   | 문자열 값과 문자열 값을 입력받아, 두 값을 문자열 값으로 연결하는 함수 
+associative_law_add | (a + b) + c 와 같이 숫자형 값을 입력받아 결합 법칙을 이용한 덧셈 결과 값을 반환해주는 함수
+associative_law_mutiple | (a * b) * c 와 같이 숫자형 값을 입력받아 결합 법칙을 이용한 곱셈  결과 값을 반환해주는 함수
+distributive_law    | a * (b + c) 와 같이 숫자형 값을 입력받아 분배 법칙을 이용한 결과 값을 반환해주는 함수
+exponent    | 밑과 승수 값을 입력 받아 지수 계산 결과 값을 반환해주는 함수
+
+하나의 함수를 예로 들면 모든 함수는 아래와 같은 구조로 쓰여져 있다.
+```python
+# 데이터 형변환================================================
+def str_to_int(string_number):
+    # """
+    #   Input:
+    #   -string_number: 숫자형태의 문자열
+    # Output:
+    #   -integer: 정수 값
+    # Examples:
+    #   >>> str_to_int("3")
+    #   3
+    #   >>> str_to_int("135")
+    #   135
+    # """
+    # ===Modify codes below=================
+    result = None
+
+    # ======================================
+
+    return result
 ```
 
-그렇지 않다면 다시 글을 꼼꼼히 읽어보거나 질문을 통해 본인의 파일을 점검해 보기 바란다. 아래와 같은 명령어로 숙제를 제출하면 결과가 나올 것이다.
+함수 제일 상단에 `def str_to_int(string_number)`에 `def`는 함수를 선언하는 예약어 이고, `str_to_int`는 본 함수의 이름이다. `string_number`는 본 함수에 입력되는 변수의 이름이다. 마지막에 붙어 있는 `:`는 파이썬의 기본 문법으로 `:` 이하로 들여쓰기가 있는 줄까지 본 함수의 영역이다.
+그 아래부터 `# ===Modify codes below=================` 전 까지는 본 함수에 대한 설명으로 Input 변수, Output 변수, 결과 확인을 위한 예시들로 구성되어 있다. 예시의 경우 간단히 표시하기 위해 함수명과 Input 값만 적었지만 실제로 `python shell`에서 실행 시키기 위해서는 아래와 같이 입력해야 한다. 혹시 헷갈릴까봐 하는 말이지만 `python shell`로 들어가기 위해서는 `bash shell`에서 `python3.4`라는 명령어를 입력해 주어야 한다. 실제 현재 코드를 본 Lab에 목적에 맞게 수정한 후 `python shell`에서 아래와 같이 입력해보자.
+
+```python
+>>> import basic_operations as bo
+>>> bo.str_to_int("3")
+3
+``` 
+위 코드에서 첫 번째 줄 `import basic_operations as bo` 은 `basic_operations` 이라는 모듈을 부르는 명령어로 `import basic_operations` 모듈을 `bo`라는 이름으로 사용하겠다는 뜻이다. 모듈에 대한 설명은 이후에 한다. 지금은 단지 모듈의 이름은 우리가 작성한 파일의 이름과 동일하다고만 이해하고 있으면 된다. 아래줄에 `bo.str_to_int("3")`는 우리가 작성한 프로그램의 함수를 실제로 실행 시키는 명령이다. 우리가 `basic_operations`의 이름을 축약하여 `bo`로 바꾸었기 때문에 `bo` 라는 이름으로 함수를 실행할 수 있다. 만약 첫번째 줄의 명령어에 `as bo`가 빠져 있다면 `basic_operations.str_to_int("3")`로 실행할 수 있다. 이미 알고 있겠지만 `str_to_int`는 함수 이름이고, 함수에 정의한대로 입력 값을 넣어야 한다. 우리가 함수를 선언 할 때, `str_to_int(string_number)` 에서 보듯이 `string_number`라고 하는 하나의 값만 입력할 수 있도록 지정했기 때문에 테스트 예제에서도 `("3")` 으로 하나의 값만 입력하였다. 만약 `("3","4")`와 같이 다른 값들을 입력하게 되면 에러 메세지를 보게 될 것이다.
+각 함수에 목적에 맞게 9개의 함수를 수정해보자. 
+
+## 수정후 테스트 하기  
+본 lab 숙제를 맞게 작성했는지 확인해보도록 하자. 참고로 모든 함수를 다 수정한 후 테스트 할 필요는 없다. 함수 하나 수정 때마다 테스트는 가능하다. 테스트를 위한 기본코드는 `main`함수에 아래와 같이 들어가 있다. 상당히 많은 내용이기 때문에 상단에 테스트 코드만 보도록 한다.
+```python
+def main():
+    print("Str_to_int Test")
+    print(str_to_int("56"))  # Expected Result: 56
+    print("====> ", str_to_int("27") == 27)  # Expected Result: True
+    print("Str_to_int Test Closed \n")
+
+    print("str_to_float Test")
+    print(str_to_float("8.4501"))  # Expected Result: 8.4501
+    print("====> ", str_to_float("3.4") == 3.4)  # Expected Result: True
+    print(str_to_float("6.74") == 9.8)  # Expected Result: False
+    print("Str_to_float Test Closed \n")
+    # 이하 생략
+```
+각 함수의 테스트 코드 들은 Test 시작과 끝을 알리는 `print` 문 사이에 작성되어 있다. 각 테스트에는 `print`문을 사용하여 함수의 결과를 화면에 출력해보게 하고 `====> `뒤에 `True`의 결과값이 나오는지 확인하게 한다. 아무런 수정없이 코드를 `python3.4 basic_operations.py` 명령어로 실행 시키면 아래와 같은 결과 값이 출력될 것이다. 참고로 수정은 당연히 `bash shell`상에서 해야 한다.
+
 ```bash
-python3.4 submit_assignment.py -submit vim_editor.py
+Str_to_int Test
+None
+====>  False
+Str_to_int Test Closed
+
+str_to_float Test
+None
+====>  False
+False
+Str_to_float Test Closed
+# 이하 생략
+```
+
+각 함수를 수정후 `python3.4 basic_operations.py` 명령어로 다시 실행 시키면 아래와 같은 결과를 볼 수 있을 것이다.
+```bash
+Str_to_int Test
+56
+====>  True
+Str_to_int Test Closed
+
+str_to_float Test
+8.4501
+====>  True
+False
+Str_to_float Test Closed
+# 이하 생략
+```
+`main` 함수 내에 코드들은 사용자가 마음대로 수정이 가능하다. 테스트하고 싶은 숫자로 새로 넣거나 필요없는 테스트는 지워도 숙제 제출에는 영향을 주지 않으니 참고하기 바란다. 참고로 해당 코드를 실행 시키지 않기 위해서는 아래와 같이 코드 앞에 `#`을 붙여주면 된다.
+```python
+def main():
+    #print("Str_to_int Test")
+    #print(str_to_int("56"))  # Expected Result: 56
+    #print("====> ", str_to_int("27") == 27)  # Expected Result: True
+    #print("Str_to_int Test Closed \n")
+```
+당연히 `#`을 제거 하면 다시 코드는 정상적으로 실행된다. `#`은 해당 코드를 실행 시키지 않고 Comment를 달아 설명해줄 수 있게 하는 예약어이다. 모든 코드를 다 수정한 후 `python3.4 basic_operations.py` 을 입력하면, 총 9번의 `====>  True` 가 표시될 것이다. 하나라도 `====>  False`가 있다면 제대로 수정되지 않은 것이니 다시 확인하기 바란다.
+
+## 숙제 제출하기  
+아마 첫 번째 차시에서 고생을 한 학생이라면 이번 숙제는 매우 쉽게 수행하였을 것이다. 숙제 제출을 위해 아래 코드를 입력하자. 그 전에 숙제 제출까지 상세히 설명해주는 단계는 이번이 마지막이다. 숙제 제출을 위한 코드는 `python3.4 submit_assignment.py -submit 파일명`으로 구성되어 있으니 반드시 기억하자.
+
+```bash
+python3.4 submit_assignment.py -submit basic_operations.py 
 # 아이디와 패쓰워드 입력
 -------------------- | ---------- | --------------------
        Function Name |    Passed? |             Feedback
 -------------------- | ---------- | --------------------
-       change_word_2 |    Not Yet |     Check Your Logic
-check_initial_values |       PASS |             Good Job
-         delete_word |    Not Yet |     Check Your Logic
-   delete_five_lines |       PASS |             Good Job
-         change_word |    Not Yet |     Check Your Logic
+   add_string_number |       PASS |             Good Job
+   add_string_string |       PASS |             Good Job
+associative_law_mutiple |       PASS |             Good Job
+       number_to_str |       PASS |             Good Job
+          str_to_int |       PASS |             Good Job
+            exponent |       PASS |             Good Job
+        str_to_float |       PASS |             Good Job
+ associative_law_add |       PASS |             Good Job
+    distributive_law |       PASS |             Good Job
 -------------------- | ---------- | --------------------
 ```
-위에 숙제는 성공하지 못한 숙제일 경우이다. 성공했다면, 모든 것이 PASS로 나올 거고 Feedback도 Good Job으로 표시 될 것이다. 할 수 있다 믿고 해보자. 세상에 쉬운 건 하나도 없다.
+왠지 모를 쾌감에 뿌듯할 것이다. 그러나 오늘의 시작일 뿐이니 다음 숙제로 넘어가자.
 
 ## Next Work
-첫 번째 강의를 무리없이 따라온 것을 축하한다. 사실상 우리는 아직 제대로 된 프로그램을 만들어 본적이 없지만, 그래도 조금은 의미 있는 결과를 만들어 봤다고 생각한다. 아직 CLI가 익숙하지 않다면 집에가서 올려둔 자료들을 다시보면서 점검해 보기 바란다. 많이 따라 만들어보는 것 보다 좋은 연습은 없다. 다음 주에도 다시 볼 수 있길 간절히 원한다.
+사람에 따라서는 이번 숙제를 정말 쉽게 한 사람도 있을 것이다. 사실 lab 2와 기본적인 숙제하는 방식은 다르지 않다. 그러나 앞으로 진행될 lab들은 상당히 어려울 것이다. 걱정하지말자 우리에겐 slack과 (마음만) 미남미년인 TA들이  있다.
 
 > **Human knowledge belongs to the world** - from movie 'Password' -
 
