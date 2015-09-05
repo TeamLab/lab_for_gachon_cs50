@@ -5,7 +5,7 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 ## Introduction
 처음 vim editor를 실행시키면 화면 아래 그림과 같이 밋밋하다. 프로그래밍을 하게 되면 에러 메세지를 찾기위한 "코드 줄 번호", 코드 정리를 위한 "indentation", 예약어 구분을 위한 "색깔 표시" 등 다양한 부가 기능이 필요하다. 이를 위해 첫 번째 Lab Assignment에서는 **CS50 서버 계정에서 개인별로 .vimrc을 설정**하는 것을 실습한다.  
 
-![.vimrc 설정이 안되어 있는 vi editor](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_1_vimrc/vim_without_vimrc.png)
+![.vimrc 설정이 안되어 있는 vi editor](https://raw.githubusercontent.com/TeamLab/gachon_cs50_lab_assignment/master/lab_1_vimrc/vim_without_vimrc.png)
 
 
 ## .vimrc 설정 명령어
