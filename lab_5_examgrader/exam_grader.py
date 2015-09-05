@@ -33,27 +33,6 @@ def sum_of_scores(number_of_subjects):
     return total_score
 
 
-# 계산된 성적 총합을 입력된 과목의 수로 나누기
-def get_average_score(total_score, number_of_subjects):
-    # """
-    # Input:
-    # 	- total_score : Integer Type의 성적 총합
-    # 	- number_of_subjects : Integer Type의 과목 갯수
-    # Output:
-    # 	- average_score: Float Type의 총 과목 수
-    # Examples(python shell):
-    # 	>>> import exam_grader as eg
-    # 	>>> eg.get_number_of_subjects()
-    #   과목수를 입력하세요: 10
-    #   10
-    # """
-    #
-    # ===Modify codes below=================
-    average_score = None
-    # ======================================
-    return average_score
-
-
 # Help Funtion - 수정하지 말 것
 def print_exam_grader(average_score):
     grade = 'F'
