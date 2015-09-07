@@ -23,7 +23,7 @@ Traceback (most recent call last):
     for i in range(number_of_subjects):
 TypeError: 'NoneType' object cannot be interpreted as an integer
 ```
-기존의 lab과  달리 이번 코드는 각각 함수들을 개별로 작동하는 코드가 아닌 함수 들이 순차적으로 작동하여 최종적인 목표를 달성하도록 설계되어 있다. 코드의 구조를 살펴보자.
+기존의 lab과  달리 이번 코드는 각 함수들을 개별로 작동하는 코드가 아닌 함수 들이 순차적으로 작동하여 최종적인 목표를 달성하도록 설계되어 있다. 코드의 구조를 살펴보자.
 
 ## exam_grader.py 코드 구조
 이번 lab을 수행하기 위해서 첫 번째로 `main` 함수부터 들여다 보자. `main` 함수는 아래와 같이 구성되어 있다. 혹시몰라 또 적지만 밑에 코드는 `vim 에디터`로 확인이 가능하고 `vi exam_grader.py` 명령으로 파일을 열어볼 수 있다.
@@ -44,7 +44,7 @@ def main():
 처음 두줄과 마지막 두줄은 프로그램의 시작과 끝을 알리는 `print`문으로 실제 프로그램 실행에 영향을 주지 않는다. 
 `number_of_subjects = get_number_of_subjects()` 코드 에는 우리가 첫 번째로 수정해야 할 함수가 나온다. 본 코드는 `get_number_of_subjects`의 함수에서 나온 결과 값을 `number_of_subjects` 변수에 저장하라는 의미이다. `get_number_of_subjects`는 사용자에게 입력을 받아 `총 과목의 수`를 계산해준다. 
 다음 줄인 `total_score = sum_of_scores(number_of_subjects)`는 실제 이번 숙제에 직접적인 영향을 주지 않는 `helper 함수` 이다. 전체적인 프로그램의 실행을 도와주는 함수로 과목의 수에 따라 각 과목의 점수를 입력받을 수 있도록 설계되어 있다. 숙제 제출이 끝난 후 살펴볼 것을 권한다.
-다음 줄인 `average_score = get_average_score(total_score=total_score, number_of_subjects=number_of_subjects)` 코드가 이번 lab에서 가장 중요한 코드이다. 본 코드는 `get_average_score` 라는 함수에 `total_score`와 `number_of_subjects` 라는 변수를 입력하여 성적의 평균 값을 `average_score` 에 할당한다. `number_of_subjects`는 첫 번째 코드에서, `total_score`는 두 번째 코드에서 각 값이 결정된다. 현재 다운로드 받은 lab code에는 `get_average_score`가 존재하지 않는다. 직접 작성해야만 한다.
+다음 줄인 `average_score = get_average_score(total_score=total_score, number_of_subjects=number_of_subjects)` 코드가 이번 lab에서 가장 중요한 코드이다. 본 코드는 `get_average_score` 라는 함수에 `total_score`와 `number_of_subjects` 라는 변수를 입력하여 성적의 평균 값을 `average_score` 에 할당한다. `number_of_subjects`는 첫 번째 코드에서, `total_score`는 두 번째 코드에서 각각 값이 결정된다. 현재 다운로드 받은 lab code에는 `get_average_score`가 존재하지 않는다. 직접 작성해야만 한다.
 마지막으로 `print_exam_grader(average_score)`는 성적의 평균 값을 바탕으로 최종 평균과 학점을 화면에 출력해주는 함수를 사용하는 코드이다. 역시 `helper 함수`로 수강자가 수정할 필요가 없다. 그러나 다음 시간에 배울 `if`문에 대해서 적혀있으므로 숙제 제출후 꼭 살펴볼 것을 권한다.
 
 ## get_number_of_subjects 함수 수정하기

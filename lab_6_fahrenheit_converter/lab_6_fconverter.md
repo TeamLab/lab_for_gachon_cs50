@@ -7,12 +7,15 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 
 ## 숙제 template 파일 다운로드
 먼저 숙제 template 파일을 cs50 서버로 부터 다운로드 받는다. 로그인 후 나타나는 `bash shell`에서 다음과 같은 명령을 입력하자.
+
 ```bash
 python3.4 submit_assignment.py -get fconverter
 ```  
+
 입력되면 다운로드 안내 메세지와 함께 `fahrenheit_converter.py` 파일이 다운로드 된다.
 ## fahrenheit_converter.py 파일 Overview
 `vim editor`로 `fahrenheit_converter.py`을 열어 전체적인 개요를 보자. `vi fahrenheit_converter.py`명령으로 파일을 열어보면 아래와 같은 내용이 파일에 기록되어 있을 것이다.
+
 ```python
 # -*- coding: utf-8 -*-
 
@@ -30,6 +33,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
 수강생이 할일은 크게 두 가지다. 하나는 프로그램 수행을 위해 3개의 함수를 작성하는 것이고, 두 번째는 `main`함수에 작성된 3개의 함수를 사용해서 화씨 변환기를 돌려 보는 것이다. 현재 코드는 헐렁하지만 여러분들이 빈 공간을 채우면 된다.
 ## input_celsius_value 함수 작성하기
 3개의 함수 부터 작성해보자. 이미 함수 하나를 작성하는 것은 lab 5에서 연습해보았기 때문에 어렵지 않을 수도 있다. 아래 내용을 참고하여 `input_celsius_value` 함수를 작성하자.
@@ -38,23 +42,28 @@ if __name__ == '__main__':
 --------       | ---
 함수명      | input_celsius_value
 input 변수  | 없음 
-Process  | "변환하고 싶은 섭씨  온도를 입력해 주세요: " 이라는 글자를 화면 출력하고, 입력된 값을 실수로 변환해줌. 사용자는 실수값 형태로만 입력한다고 가정함 
+Process  | "변환하고 싶은 섭씨  온도를 입력해 주세요: " 이라는 글자를 화면에 출력하고, 입력된 값을 실수로 변환해줌. 사용자는 실수값 형태로만 입력한다고 가정함 
 output 값   | Float Type의 celsius_value
 
 함수를 작성하고 나서 잘 작동하는 지 궁금할 것이다. 확인하는 방법은 두가지가 있다. 먼저 아래처럼 기존 코드에서 `main` 함수를 주석 처리하고 테스트 코드를 삽입하는 방법이다. `fahrenheit_converter.py` 파일을 `vim editor`로 열어 맨 마지막 `if __name__ == '__main__':`을 아래처럼 수정해 보자
+
 ```python
 if __name__ == '__main__':
     # main()
     celsius_value = input_celsius_value()
     print(celsius_value)
 ```
-함수가 정상적으로 작성되었다면, `bash shell`에서 `python3.4 fahrenheit_converter.py`을 실행하면 아래와 같은 화면을 보게 될 것이다.
+
+함수가 정상적으로 작성된 후, `bash shell`에서 `python3.4 fahrenheit_converter.py`을 실행하면 아래와 같은 화면을 보게 될 것이다.
+
 ```bash
 변환하고 싶은 섭씨  온도를 입력해 주세요: 15.2
 15.2
 ```
+
 입력해 준 값을 그대로 출력해 주는 것으로 별다른 특징은 없다.
 코드 자체를 수정하여 테스트 코드를 넣는 방법도 있지만, 기존 처럼 `python shell`에서 테스트하는 방법도 있다. `bash shell`에서 `python3.4`을 입력하여 `python shell`을 실행 시켜서 아래와 같이 테스트 해보자
+
 ```python
 Python 3.4.0 (default, Jun 19 2015, 14:20:21)
 [GCC 4.8.2] on linux
@@ -64,6 +73,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 변환하고 싶은 섭씨  온도를 입력해 주세요:10
 10.0
 ```
+
 이미 `python shell`에서 테스트 하는 방법과 `import`문의 의미는 설명해 주었다. 더 이상의 자세한 설명은 생략한다.
 
 ## convert_celsius_fahrenheit 함수 작성하기
@@ -109,7 +119,7 @@ output 값   | 없음. output 값이 없을 경우 `return 변수명` 부분을 
 입력해주기 바란다.
 
 ## main 함수 수정하기
-이제 마지막으로 한 것은 각 함수들을 엮어서 우리가 원하는 화씨 변환기 프로그램을 완성해 주는 것이다. 이를 위해서는 `main` 함수의 수정이 필요하다. `main`함수에 ` # ===Modify codes below=================` 아랫 부분에 다음의 지시사항에 따라 코드를 작성해주기 바란다.
+이제 마지막으로 할 것은 각 함수들을 엮어서 우리가 원하는 화씨 변환기 프로그램을 완성해 주는 것이다. 이를 위해서는 `main` 함수의 수정이 필요하다. `main`함수에 ` # ===Modify codes below=================` 아랫 부분에 다음의 지시사항에 따라 코드를 작성해주기 바란다.
 
 1. input_celsius_value 함수를 호출하고 그 결과 값을 celsius_value변수에 저장한다.
 2. celsius_value을 convert_celsius_fahrenheit 함수의 입력 값으로 하여 convert_celsius_fahrenheit 함수를 호출하고, 그 결과 값을 fahrenheit_value 변수에 저장한다. 
