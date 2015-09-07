@@ -23,7 +23,7 @@ Traceback (most recent call last):
     for i in range(number_of_subjects):
 TypeError: 'NoneType' object cannot be interpreted as an integer
 ```
-기존의 lab과  달리 이번 코드는 각 함수들을 개별로 작동하는 코드가 아닌 함수 들이 순차적으로 작동하여 최종적인 목표를 달성하도록 설계되어 있다. 코드의 구조를 살펴보자.
+기존의 lab과  달리 이번 코드는 각각 함수들을 개별로 작동하는 코드가 아닌 함수 들이 순차적으로 작동하여 최종적인 목표를 달성하도록 설계되어 있다. 코드의 구조를 살펴보자.
 
 ## exam_grader.py 코드 구조
 이번 lab을 수행하기 위해서 첫 번째로 `main` 함수부터 들여다 보자. `main` 함수는 아래와 같이 구성되어 있다. 혹시몰라 또 적지만 밑에 코드는 `vim 에디터`로 확인이 가능하고 `vi exam_grader.py` 명령으로 파일을 열어볼 수 있다.
