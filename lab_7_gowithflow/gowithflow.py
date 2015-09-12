@@ -239,7 +239,6 @@ def number_of_cases(list_data):
     #   >>> gwf.number_of_cases(a)
     #   ['11', '12', '13', '1a', '21', '22', '23', '2a', '31', '32', '33', '3a', 'a1', 'a2', 'a3', 'aa']
     # '''
-    # pass
     # ===Modify codes below=============
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
