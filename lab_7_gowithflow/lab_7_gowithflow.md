@@ -41,8 +41,44 @@ b = ['a', 'b', 'c', 'd', 'e']
 c = a + b
 ```
 저 방법외에 `a.extend(b)`를 하면 a 변수에 b list가 합쳐진다.
-특정한 값이 해당 리스트에 존재하는지 확인하기 위해서는 `if value in list_data` 같은 표현을 쓸 수 있다. `value`라는 값이 `list_data`라는 list type에 들어가있는지 확인하는 구문이다. 당연히 if문 형식이기 때문에 `indentation`을 사용하여 실행 명령을 아래 적어줘야 한다.
+특정한 값이 해당 리스트에 존재하는지 확인하기 위해서는 `if value in list_data` 같은 표현을 쓸 수 있다. `value`라는 값이 `list_data`라는 list type에 들어가있는지 확인하는 구문이다. 당연히 if문 형식이기 때문에 `indentation`을 사용하여 실행 명령을 아래 적어줘야 한다. 아래와 같이 코드를 작성할 수 있다.
+```python
+result = []
+if not(value in list_data):
+    result.append(value)
+```
+위의 코드는 `value`값이 `list_data` list에 들어가 있지 않으면 `result` list에 `value`의 값을 추가하는 명령이다. 중요한 예시이니 꼭 이해하고 넘어가자.
 list에서 특정한 값을 지우기 위해서는 `list_data.remove(특정한값)` 을 쓸 수 있다. 혹시나 노파심에 하는 말인데,  저 명령문에서 `list_data`는 list type의 변수명을 의미하면 `특정한값`은 지우고자 하는 값을 얘기한다. 예를 들어 `0`을 지우고 싶으면, 저기 `특정한값`에 `0`을 적어주면 된다.
 list에 새로운 값을 추가하는 방법은 `list_data.append(추가하는값)`이다. 물론 문자열일때는 `'추가하는값'`을 붙여야함을 잊지말자
 제일 작은 값을 찾는 방법은 `min(list_data)` 이고, 특정한 값이 list에 존재하는 갯수를 찾을 때는 `list_data.count(특정한값)`이다. 지금 설명하는 내용은 `number_of_cases`에 필요한 내용들이므로 숙제를 하기 바란다.
+
+## 숙제 제출하기
+모든 함수를 다 수정했다면, 아래와 같이 제출하자
+```bash
+ python3.4 submit_assignment.py -submit gowithflow.py
+```  
+제대로 작성했다면 아래와 같은 메세지가 뜰 것이다.
+```python
+-------------------- | ---------- | --------------------
+       Function Name |    Passed? |             Feedback
+-------------------- | ---------- | --------------------
+ find_smallest_value |       PASS |             Good Job
+         sum_of_list |       PASS |             Good Job
+comparison_list_size |       PASS |             Good Job
+    binary_converter |       PASS |             Good Job
+      merge_and_sort |       PASS |             Good Job
+      discount_price |       PASS |             Good Job
+      odd_even_check |       PASS |             Good Job
+     number_of_cases |       PASS |             Good Job
+delete_a_list_element |       PASS |             Good Job
+-------------------- | ---------- | --------------------
+```  
+아직도 몇몇 분들은 제출하기 전에 해당 코드를 테스트해보지 않고 제출한다. `unsupported error`가 가끔 나는데, 코드 자체가 분석 불가능할 경우나는 에러로 얼마나 수강자가 숙제에 무심한지 티를 내는 것이다. 반드시 `bash shell`에서 `python3.4 gowithflow.py` 명령으로 실행을 해보고 문제가 없을 경우에만 제출하도록 하자. 물론, 위의 명령을 실행하기 위해서는 자기 나름대로 테스트 코드를 만들어 봐야 한다.
+
+## Next Work
+이번 숙제는 사람에 따라 굉장히 어렵게 느끼기도 했을 것이다. 그 이유는 처음으로 로직이 숙제에 들어갔기 때문이다. 거의 모든 컴퓨터 프로그램은 로직에 의해 움직이다. 조금 난해하더라도 반드시 스스로의 힘으로 작성해야 머리에 남을 것이다. 이번 차시에는 Lab은 두개밖에 없다. 한 개만 더해보자.
+
+> **Human knowledge belongs to the world** - from movie 'Password' -
+
+## Footnotes
 
