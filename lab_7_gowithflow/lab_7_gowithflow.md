@@ -1,4 +1,4 @@
-Lab #6 - list, control, loop 연습 (gowithflow)
+Lab #7 - list, control, loop 연습 (gowithflow)
 =======
 Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 
