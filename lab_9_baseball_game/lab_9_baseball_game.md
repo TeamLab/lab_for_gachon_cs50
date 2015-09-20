@@ -84,6 +84,7 @@ def main():
 ```
 template은 lab 8 factorial calculator와 흡사하면서도 조금 다르다. 일단 프로그램이 시작되면 "Play Baseball" 한줄과 "Random Number is : " 라는 한 줄이 화면에 찍히고 시작한다. 앞에서 설명했듯이 반드시 새로운 baseball game이 시작되면 `print("Random Number is : ", random_number)` 가 실행되야 한다. `random_number` 변수는 수강생이 임의로 수정가능하겠지만 `get_not_duplicated_three_digit_number` 함수를 잘 작성하여 `random_number`에 할당해 주는게 이 숙제를 해결하는데 있어 가장 쉬울 것이다. 
 이 숙제가 까다로운 것은 숙제 자체도 그렇지만, 숙제를 검사할 때 검사 프로그램의 한계로 인해 위쪽 screen shot 처럼 작동되지 않으면 올바르게 코딩했음에도 불구하고 pass에 실패할 수 있다. 
+한 가지 유의할 점은 사용자의 입력을 받을 때 `print` 문을 쓴 다음 `input`문을 쓰지 말고 `input` 문만 사용하여 입력을 받아야 한다. 예를 들면 `user_input = input('Input guess number : ')` 형태로 작성되어야 한다. 이 또한 강의자의 개발 능력 한계니 이해해주면 좋겠다.
 먼저 각 개별 함수를 목적에 맞게 잘 수정한 후, 개별 함수들을 잘 활용하여 `main` 함수를 작성하기 바란다. 실패할 가능성이 높은 함수지만, 굉장히 즐 거운 작업이 될 것이다.
 
 ## 숙제 제출하기
