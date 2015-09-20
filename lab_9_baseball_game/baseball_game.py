@@ -3,18 +3,18 @@
 import random
 
 def get_random_number():
-    # Helper Function - Áö¿ìÁö ¸» °Í
-    # 100ºÎÅÍ 999±îÁö ¼ö¸¦ ·¥´ıÇÏ°Ô ¹İÈ¯ÇÔ
+    # Helper Function - ì§€ìš°ì§€ ë§ ê²ƒ
+    # 100ë¶€í„° 999ê¹Œì§€ ìˆ˜ë¥¼ ë¨ë¤í•˜ê²Œ ë°˜í™˜í•¨
     return random.randrange(100, 1000)
 
 
 def is_digit(user_input_number):
     # '''
     # Input:
-    #   - user_input_number : ¹®ÀÚ¿­ °ª
+    #   - user_input_number : ë¬¸ìì—´ ê°’
     # Output:
-    #   - user_input_number°¡ Á¤¼ö·Î º¯È¯ °¡´ÉÇÒ °æ¿ì´Â True,
-    #     ±×·¸Áö ¾ÊÀ» °æ¿ì´Â False
+    #   - user_input_numberê°€ ì •ìˆ˜ë¡œ ë³€í™˜ ê°€ëŠ¥í•  ê²½ìš°ëŠ” True,
+    #     ê·¸ë ‡ì§€ ì•Šì„ ê²½ìš°ëŠ” False
     # Examples:
     #   >>> import baseball_game as bg
     #   >>> bg.is_digit("551")
@@ -29,7 +29,7 @@ def is_digit(user_input_number):
     #   False
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
     result = None
 
     # ==================================
@@ -40,11 +40,11 @@ def is_digit(user_input_number):
 def is_between_100_and_999(user_input_number):
     # '''
     # Input:
-    #   - user_input_number : ¹®ÀÚ¿­ °ª
-    #                         ÀÔ·ÂµÈ °ªÀº ¼ıÀÚÇüÅÂÀÇ ¹®ÀÚ¿­ °ªÀÓÀÌ º¸ÀåµÈ´Ù.
+    #   - user_input_number : ë¬¸ìì—´ ê°’
+    #                         ì…ë ¥ëœ ê°’ì€ ìˆ«ìí˜•íƒœì˜ ë¬¸ìì—´ ê°’ì„ì´ ë³´ì¥ëœë‹¤.
     # Output:
-    #   - user_input_number°¡ Á¤¼ö·Î º¯È¯ÇÏ¿© 100ÀÌ»ó 1000¹Ì¸¸ÀÏ °æ¿ì True,
-    #     ±×·¸Áö ¾ÊÀ» °æ¿ì´Â False
+    #   - user_input_numberê°€ ì •ìˆ˜ë¡œ ë³€í™˜í•˜ì—¬ 100ì´ìƒ 1000ë¯¸ë§Œì¼ ê²½ìš° True,
+    #     ê·¸ë ‡ì§€ ì•Šì„ ê²½ìš°ëŠ” False
     # Examples:
     #   >>> import baseball_game as bg
     #   >>> bg.is_between_100_and_999("551")
@@ -57,7 +57,7 @@ def is_between_100_and_999(user_input_number):
     #   False
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
     result = None
 
     # ==================================
@@ -67,11 +67,11 @@ def is_between_100_and_999(user_input_number):
 def is_duplicated_number(three_digit):
     # '''
     # Input:
-    #   - three_digit : ¹®ÀÚ¿­·Î µÈ ¼¼ÀÚ¸® ¾çÀÇ Á¤¼ö °ª
-    #                   ¹®ÀÚ¿­·Î µÈ ¼¼ÀÚ¸® ¾çÀÇ Á¤¼ö°ªÀÇ ÀÔ·ÂÀÌ º¸ÀåµÈ´Ù.
+    #   - three_digit : ë¬¸ìì—´ë¡œ ëœ ì„¸ìë¦¬ ì–‘ì˜ ì •ìˆ˜ ê°’
+    #                   ë¬¸ìì—´ë¡œ ëœ ì„¸ìë¦¬ ì–‘ì˜ ì •ìˆ˜ê°’ì˜ ì…ë ¥ì´ ë³´ì¥ëœë‹¤.
     # Output:
-    #   - three_digit Á¤¼ö·Î º¯È¯ÇÏ¿´À» °æ¿ì Áßº¹µÇ´Â ¼ö°¡ ÀÖÀ¸¸é True,
-    #     ±×·¸Áö ¾ÊÀ» °æ¿ì´Â False
+    #   - three_digit ì •ìˆ˜ë¡œ ë³€í™˜í•˜ì˜€ì„ ê²½ìš° ì¤‘ë³µë˜ëŠ” ìˆ˜ê°€ ìˆìœ¼ë©´ True,
+    #     ê·¸ë ‡ì§€ ì•Šì„ ê²½ìš°ëŠ” False
     #   ex) 117 - False, 123 - True, 103 - True, 113 - False
     # Examples:
     #   >>> import baseball_game as bg
@@ -85,7 +85,7 @@ def is_duplicated_number(three_digit):
     #   True
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
 
     result = None
     # ==================================
@@ -95,10 +95,10 @@ def is_duplicated_number(three_digit):
 def is_validated_number(user_input_number):
     # '''
     # Input:
-    #   - user_input_number : ¹®ÀÚ¿­ °ª
+    #   - user_input_number : ë¬¸ìì—´ ê°’
     # Output:
-    #   - user_input_number °ªÀÌ ¾Æ·¡ Á¶°ÇÀÌ¸é True, ±×·¸Áö ¾ÊÀ¸¸é False¸¦ ¹İÈ¯
-    #        1) ¼ıÀÚÇü ¹®ÀÚ¿­ÀÌ¸ç, 2) 100ÀÌ»ó 1000¹Ì¸¸ÀÌ¸ç, 3) Áßº¹µÇ´Â ¼ıÀÚ°¡ ¾øÀ» °æ¿ì 
+    #   - user_input_number ê°’ì´ ì•„ë˜ ì¡°ê±´ì´ë©´ True, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ Falseë¥¼ ë°˜í™˜
+    #        1) ìˆ«ìí˜• ë¬¸ìì—´ì´ë©°, 2) 100ì´ìƒ 1000ë¯¸ë§Œì´ë©°, 3) ì¤‘ë³µë˜ëŠ” ìˆ«ìê°€ ì—†ì„ ê²½ìš° 
     #   ex) 117 - False, 123 - True, 103 - True, 113 - False
     # Examples:
     #   >>> import baseball_game as bg
@@ -114,7 +114,7 @@ def is_validated_number(user_input_number):
     #   False
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
 
     result = None
     # ==================================
@@ -124,9 +124,9 @@ def is_validated_number(user_input_number):
 def get_not_duplicated_three_digit_number():
     # '''
     # Input:
-    #   - None : ÀÔ·Â°ªÀÌ ¾øÀ½
+    #   - None : ì…ë ¥ê°’ì´ ì—†ìŒ
     # Output:
-    #   - Áßº¹µÇ´Â ¼ıÀÚ°¡ ¾ø´Â 3ÀÚ¸® Á¤¼ö°ª
+    #   - ì¤‘ë³µë˜ëŠ” ìˆ«ìê°€ ì—†ëŠ” 3ìë¦¬ ì •ìˆ˜ê°’
     # Examples:
     #   >>> import baseball_game as bg
     #   >>> bg.get_not_duplicated_three_digit_number()
@@ -139,7 +139,7 @@ def get_not_duplicated_three_digit_number():
     #   381
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
 
     result = None
     # ==================================
@@ -149,15 +149,15 @@ def get_not_duplicated_three_digit_number():
 def get_strikes_or_ball(user_input_number, random_number):
     # '''
     # Input:
-    #   - user_input_number : ¹®ÀÚ¿­°ªÀ¸·Î »ç¿ëÀÚ°¡ ÀÔ·ÂÇÏ´Â ¼¼ÀÚ¸® Á¤¼ö
-    #   - random_number : ¹®ÀÚ¿­°ªÀ¸·Î ÄÄÇ»ÅÍ°¡ ÀÚµ¿À¸·Î »ı¼ºµÈ ¼ıÀÚ
+    #   - user_input_number : ë¬¸ìì—´ê°’ìœ¼ë¡œ ì‚¬ìš©ìê°€ ì…ë ¥í•˜ëŠ” ì„¸ìë¦¬ ì •ìˆ˜
+    #   - random_number : ë¬¸ìì—´ê°’ìœ¼ë¡œ ì»´í“¨í„°ê°€ ìë™ìœ¼ë¡œ ìƒì„±ëœ ìˆ«ì
     # Output:
-    #   - [strikes, ball] : ±ÔÄ¢¿¡ µû¶ó Á¤¼öÇü °ªÀÎ strikes¿Í ballÀÌ ¹İÈ¯µÊ
-    #   º¯È¯ ±ÔÄ¢Àº ¾Æ·¡¿Í °°À½
-    #   - »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ıÀÚ¿Í ÄÄÇ»ÅÍ°¡ »ı¼ºÇÑ ¼ıÀÚÀÇ
-    #     ÇÑ ¼ıÀÚ¿Í ÀÚ¸´¼ö°¡ ¸ğµÎ ÀÏÄ¡ÇÏ¸é 1 Strike
-    #   - ÀÚ¸´¼ö´Â ´Ù¸£³ª ÀÔ·ÂÇÑ ÇÑ ¼ıÀÚ°¡ Á¸ÀçÇÏ¸é 1 Ball
-    #   - ¼¼ÀÚ¸® ¼ıÀÚ¸¦ Á¤È®È÷ ÀÔ·ÂÇÏ¸é 3 Strike
+    #   - [strikes, ball] : ê·œì¹™ì— ë”°ë¼ ì •ìˆ˜í˜• ê°’ì¸ strikesì™€ ballì´ ë°˜í™˜ë¨
+    #   ë³€í™˜ ê·œì¹™ì€ ì•„ë˜ì™€ ê°™ìŒ
+    #   - ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ«ìì™€ ì»´í“¨í„°ê°€ ìƒì„±í•œ ìˆ«ìì˜
+    #     í•œ ìˆ«ìì™€ ìë¦¿ìˆ˜ê°€ ëª¨ë‘ ì¼ì¹˜í•˜ë©´ 1 Strike
+    #   - ìë¦¿ìˆ˜ëŠ” ë‹¤ë¥´ë‚˜ ì…ë ¥í•œ í•œ ìˆ«ìê°€ ì¡´ì¬í•˜ë©´ 1 Ball
+    #   - ì„¸ìë¦¬ ìˆ«ìë¥¼ ì •í™•íˆ ì…ë ¥í•˜ë©´ 3 Strike
     # Examples:
     #   >>> import baseball_game as bg
     #   >>> bg.get_strikes_or_ball("123", "472")
@@ -172,7 +172,7 @@ def get_strikes_or_ball(user_input_number, random_number):
     #   [3, 0]
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
 
     result = None
     # ==================================
@@ -182,10 +182,10 @@ def get_strikes_or_ball(user_input_number, random_number):
 def is_yes(one_more_input):
     # '''
     # Input:
-    #   - one_more_input : ¹®ÀÚ¿­°ªÀ¸·Î »ç¿ëÀÚ°¡ ÀÔ·ÂÇÏ´Â ¹®ÀÚ
+    #   - one_more_input : ë¬¸ìì—´ê°’ìœ¼ë¡œ ì‚¬ìš©ìê°€ ì…ë ¥í•˜ëŠ” ë¬¸ì
     # Output:
-    #   - ÀÔ·ÂÇÑ °ªÀÌ ´ë¼Ò¹®ÀÚ ±¸ºĞ¾øÀÌ "Y" ¶Ç´Â "YES"ÀÏ °æ¿ì True,
-    #     ±×·¸Áö ¾ÊÀ» °æ¿ì False¸¦ ¹İÈ¯ÇÔ
+    #   - ì…ë ¥í•œ ê°’ì´ ëŒ€ì†Œë¬¸ì êµ¬ë¶„ì—†ì´ "Y" ë˜ëŠ” "YES"ì¼ ê²½ìš° True,
+    #     ê·¸ë ‡ì§€ ì•Šì„ ê²½ìš° Falseë¥¼ ë°˜í™˜í•¨
     # Examples:
     #   >>> import baseball_game as bg
     # >>> bg.is_yes("Y")
@@ -204,7 +204,7 @@ def is_yes(one_more_input):
     # False
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
 
     result = None
     # ==================================
@@ -214,10 +214,10 @@ def is_yes(one_more_input):
 def is_no(one_more_input):
     # '''
     # Input:
-    #   - one_more_input : ¹®ÀÚ¿­°ªÀ¸·Î »ç¿ëÀÚ°¡ ÀÔ·ÂÇÏ´Â ¹®ÀÚ
+    #   - one_more_input : ë¬¸ìì—´ê°’ìœ¼ë¡œ ì‚¬ìš©ìê°€ ì…ë ¥í•˜ëŠ” ë¬¸ì
     # Output:
-    #   - ÀÔ·ÂÇÑ °ªÀÌ ´ë¼Ò¹®ÀÚ ±¸ºĞ¾øÀÌ "N" ¶Ç´Â "NO"ÀÏ °æ¿ì True,
-    #     ±×·¸Áö ¾ÊÀ» °æ¿ì False¸¦ ¹İÈ¯ÇÔ
+    #   - ì…ë ¥í•œ ê°’ì´ ëŒ€ì†Œë¬¸ì êµ¬ë¶„ì—†ì´ "N" ë˜ëŠ” "NO"ì¼ ê²½ìš° True,
+    #     ê·¸ë ‡ì§€ ì•Šì„ ê²½ìš° Falseë¥¼ ë°˜í™˜í•¨
     # Examples:
     #   >>> import baseball_game as bg
     # >>> bg.is_no("Y")
@@ -236,7 +236,7 @@ def is_no(one_more_input):
     # False
     # '''
     # ===Modify codes below=============
-    # Á¶°Ç¿¡ µû¶ó º¯È¯µÇ¾î¾ß ÇÒ °á°ú¸¦ result º¯¼ö¿¡ ÇÒ´ç
+    # ì¡°ê±´ì— ë”°ë¼ ë³€í™˜ë˜ì–´ì•¼ í•  ê²°ê³¼ë¥¼ result ë³€ìˆ˜ì— í• ë‹¹
 
     result = None
     # ==================================
@@ -249,7 +249,7 @@ def main():
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
-    # À§ÀÇ ÄÚµå¸¦ Æ÷ÇÔÇÏ¿© ÀÚÀ¯·Î¿î ¼öÁ¤ÀÌ °¡´ÉÇÔ
+    # ìœ„ì˜ ì½”ë“œë¥¼ í¬í•¨í•˜ì—¬ ììœ ë¡œìš´ ìˆ˜ì •ì´ ê°€ëŠ¥í•¨
 
 
     # ==================================
