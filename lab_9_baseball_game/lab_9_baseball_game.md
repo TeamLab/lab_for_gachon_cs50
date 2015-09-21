@@ -48,14 +48,14 @@ python3.4 submit_assignment.py -get baseball
 
 입력되면 다운로드 안내 메세지와 함께 `baseball_game.py` 파일이 다운로드 된다.
 
-## baseball_game.py 파일 Ovewview
+## baseball_game.py 파일 Overview
 `vim editor`로 `baseball_game.py`을 열어 전체적인 개요를 보자. `vi baseball_game.py`명령으로 파일을 열어보면 `main` 함수와 여러개의 함수들이 존재할 것이다. 각 함수들은 여러분께서 직접 작성해서 제출해야 하는 함수이고, `main` 함수는 실제 baseball game을 실행하는 함수이다. 각 함수의 구현 내용은 아래와 같다.
 
 함수           | 설명 
 --------       | ---
 is_digit      | 문자열 값을 입력받아, 정수로 변환 가능할 경우는 True, 그렇지 않을 경우는 False로 변환해주는 함수
 is_between_100_and_999      | 문자열 값을 입력받아, 정수로 변환하여 100이상 1000미만일 경우 True, 그렇지 않을 경우는 False를 반환해주는 함수. 이 때 입력되는 문자열 값은 정수형태의 문자열 값 임이 보장됨 ex) 324, 1103 
-is_duplicated_number  | 문자열로 된 세자리 양의 정수 값을 입력 받아 정수로 변환하였을 경우 중복되는 수가 있으면 True, 그렇지 않을 경우는 False를 반환해주는 함수. 이 때 문자열로 된 세자리 양의 정수값의 입력이 보장됨 ex) 117 - False, 123 - True, 103 - True, 113 - False
+is_duplicated_number  | 문자열로 된 세자리 양의 정수 값을 입력 받아 정수로 변환하였을 경우 중복되는 수가 있으면 True, 그렇지 않을 경우는 False를 반환해주는 함수. 이 때 문자열로 된 세자리 양의 정수값의 입력이 보장됨 ex) 117 - True, 123 - False, 103 - False, 113 - True
 is_validated_number | 문자열 값을 입력받아 아래 세가지 조건에 맞으면 True, 그렇지 않으면 False를 반환함 1) 숫자형 문자열이며, 2) 100이상 1000미만이며, 3) 중복되는 숫자가 없을 경우. 위의 세 가지 함수를 사용하여 구현이 가능함
 get_not_duplicated_three_digit_number  | 입력 값은 없으며, 중복되는 숫자가 없는 세자리 정수값이 반환됨, 문자열이 아닌 정수값으로 반환됨. 이때 `get_random_number()` 함수를 사용하여 random number를 생성하고 생성된 random number에 중복되는 숫자가 없을 경우에만 해당 숫자를 반환해줌 
 get_strikes_or_ball   | 사용자가 입력한 세 자리 정수 문자열과, 컴퓨터가 자동으로 생성한 세 자리 정수 문자열을 입력받아, baseball game 규칙에 맞춰 [strkies, balls]을 반환해줌. 리스트 형태로 반환하여 strikes와 balls는 Integer Type 값 
@@ -111,7 +111,7 @@ get_not_duplicated_three_digit_number |       PASS |             Good Job
 아마도 정말로 감격 스러운 순간일 것이다. 고생했다. 
 
 ## Next Work
-이제 여러분은 프로그래밍을 위한 거대한 한발을 내딛었다고 생각한다. 이때까지는 A,B, C를 부르거나 기껏해야 "How are you? Fine thank you, and you" 정도를 읊었다면 이제 프로그래밍으로 쉬운 어린이 "팝송" 한곡 부른 정도라고나 할까? 여러분들은 충분히 잘했다. 자신을 자랑스럽게 생각하고 오늘 자기전에 맥주한잔을 마시면서 자신의 무한한 가능성이 있는 존재임을 깨닫기 바란다. 여기까지 와줘서 고맙다. 
+이제 여러분은 프로그래밍을 위한 거대한 한발을 내딛었다고 생각한다. 이때까지는 A,B, C를 부르거나 기껏해야 "How are you? Fine thank you, and you" 정도를 읊었다면 이제 프로그래밍으로 쉬운 어린이 "팝송" 한곡 부른 정도라고나 할까? 여러분들은 충분히 잘했다. 오늘 자기전에 맥주한잔을 마시면서 자신이 무한한 가능성이 있는 존재임을 깨닫기 바란다. 여기까지 와줘서 고맙다. 
 
 > **Human knowledge belongs to the world** - from movie 'Password' -
 
