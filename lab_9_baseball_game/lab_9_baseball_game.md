@@ -23,7 +23,7 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 어떻게 할지 걱정될 수 도 있지만, 꽤 많은 힌트와 함께 여러분들을 바른 길로 인도해주는 함수를 제시할 것이다. 너무 걱정말고 시작해보자
 
 ## Baseball Game Overview
-단순히 Strike와 볼판정만 해주면 좋겠지만 본 Lab에서는 처음으로 사용자의 입력에 대한 오류 처리를 실시한다. 여러분들도 가끔 웹 사이트에 접속할 때 잘못된 입력을 바로 잡아주는 프로그램을 본적이 있을 것이다. 예를들면, 이메일 주소를 입력할 때 "@"를 쓰지 않았다던가, 비밀번호 입력시 숫자를 같이 쓰지 않았다던가 할 경우, 자동으로 프로그램이 오류 입력임을 지정하고 재입력을 하게해 줄 것이다. 본 프로그램도 마찬가지로 사용자가 아래와 같이 잘못 입력했을 경우, "Wrong Input" 이라는 메세지를 남기며 오류 처리를 해준다.
+단순히 Strike와 볼판정만 해주면 좋겠지만 본 Lab에서는 처음으로 사용자의 입력에 대한 오류 처리를 실시한다. 여러분들도 가끔 웹 사이트에 접속할 때 잘못된 입력을 바로 잡아주는 프로그램을 본적이 있을 것이다. 예를 들면, 이메일 주소를 입력할 때 "@"를 쓰지 않았다던가, 비밀번호 입력시 숫자를 같이 쓰지 않았다던가 할 경우, 자동으로 프로그램이 오류 입력임을 지정하고 재입력을 하게해 줄 것이다. 본 프로그램도 마찬가지로 사용자가 아래와 같이 잘못 입력했을 경우, "Wrong Input" 이라는 메세지를 남기며 오류 처리를 해준다.
 
 - 사용자가 숫자 대신 문자를 입력했을 경우
 - 사용자가 실수를 입력했을 경우
@@ -35,9 +35,13 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 - 사용자가 "N" 또는 "No"라고 입력했을 경우 대소문자에 상관없이 게임을 종료한다. 즉 "n", "nO", "NO" 등의 경우에도 게임은 종료된다.
 - 사용자가 이외에 입력을 하였을 경우 "Wrong Input" 이라고 출력되면서 종료된다.
 
+또 다른 종료 조건으로 사용자가 게임 중 `0`를 입력하게 되면 종료해야 한다. 이는 Lab 8의 Factorial Calcualtor의 종료 조건과 같다. 
+
 또한 새로운 게임이 시작할 때는 반드시 `Random Number is :  xxx` 라는 문자가 출력되면서 `xxx` 부분에는 컴퓨터가 random하게 생성한 것을 표시해준다. 이는 자동 채점 프로그램을 동작하게 하기 위한 것으로 표시 되지 않을 경우 컴퓨터가 채점을 하지 못한다. 실제 돌아가는 프로그램은 아래와 같다.
 
  ![프로그램 실행 스크린샷](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_9_baseball_game/baseball_game_screenshot.png)
+
+ ![0으로 종료되는 스크린샷](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_9_baseball_game/baseball_game_screenshot_2.png)
 
 ## 숙제 template 파일 다운로드
 먼저 숙제 template 파일을 cs50 서버로 부터 다운로드 받는다. 로그인 후 나타나는 `bash shell`에서 다음과 같은 명령을 입력하자.
