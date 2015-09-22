@@ -2,6 +2,7 @@
 
 import random
 
+
 def get_random_number():
     # Helper Function - 지우지 말 것
     # 100부터 999까지 수를 램덤하게 반환함
@@ -34,7 +35,6 @@ def is_digit(user_input_number):
 
     # ==================================
     return result
-
 
 
 def is_between_100_and_999(user_input_number):
@@ -72,7 +72,7 @@ def is_duplicated_number(three_digit):
     # Output:
     #   - three_digit 정수로 변환하였을 경우 중복되는 수가 있으면 True,
     #     그렇지 않을 경우는 False
-    #   ex) 117 - False, 123 - True, 103 - True, 113 - False
+    #   ex) 117 - True, 123 - False, 103 - False, 113 - True
     # Examples:
     #   >>> import baseball_game as bg
     #   >>> bg.is_duplicated_number("551")
@@ -98,7 +98,7 @@ def is_validated_number(user_input_number):
     #   - user_input_number : 문자열 값
     # Output:
     #   - user_input_number 값이 아래 조건이면 True, 그렇지 않으면 False를 반환
-    #        1) 숫자형 문자열이며, 2) 100이상 1000미만이며, 3) 중복되는 숫자가 없을 경우 
+    #        1) 숫자형 문자열이며, 2) 100이상 1000미만이며, 3) 중복되는 숫자가 없을 경우
     #   ex) 117 - False, 123 - True, 103 - True, 113 - False
     # Examples:
     #   >>> import baseball_game as bg
@@ -126,7 +126,8 @@ def get_not_duplicated_three_digit_number():
     # Input:
     #   - None : 입력값이 없음
     # Output:
-    #   - 중복되는 숫자가 없는 3자리 정수값
+    #   - 중복되는 숫자가 없는 3자리 정수값을 램덤하게 생성하여 반환함
+    #     정수값으로 문자열이 아님
     # Examples:
     #   >>> import baseball_game as bg
     #   >>> bg.get_not_duplicated_three_digit_number()
@@ -140,6 +141,7 @@ def get_not_duplicated_three_digit_number():
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
+    # get_random_number() 함수를 사용하여 random number 생성
 
     result = None
     # ==================================
