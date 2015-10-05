@@ -218,9 +218,6 @@ def is_magic_sqaure(square):
     # ================================
     return result
 
-def get_row_sum(square):
-    return list(map(sum, square))
-
 def main():
     user_input = 999
     print("Play Magic Square Game!!")
