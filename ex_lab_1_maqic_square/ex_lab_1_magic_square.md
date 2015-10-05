@@ -1,34 +1,46 @@
-Lab #7 - list, control, loop 연습 (gowithflow)
+Extreme Lab #1 - 마방진 (Magic Square)
 =======
 Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 
 ## Introduction
-3주차임에도 불구하고 16주차처럼 느껴진다면 기분 탓이다. 기분좋게 Lab 6를 시작하는 여러분들을 환영한다. 굉장히 어렵고 힘들게 느껴지겠지만, 실은 기초중에 기초를 하고 있다는 것에 좌절하지 않길 바란다. 혹시 인스타그램을 쓰는가? 참고로 인스타그램은 파이썬으로 개발된 대표적인 서비스이다. 언젠가 그런 서비스를 개발할 날을 꿈꾸며, 오늘의 Lab을 시작하자.
-이번 차시의 Lab은 이미 배운 list, if문, for문과 while문 등을 연습한다. 기본적인 형태는 이미 경험해본 Lab #4 - basic_operations와 같다. 다양한 함수들이 존재하고 각 함수에 목적에 맞게 수정하면 된다. 
-난이도가 점점 올라간다. 그럼에도 불구하고 아직 기초라는 사실을 잊지 말고, Lab을 즐기길 바란다. 
+처음으로 나오는 Extreme Homework. 이때까지 모든 Lab은 모두가 할 수 있게 설계되었다면 이번 숙제는 정말 열심히 따라온 학생들만 풀수 있는 어려운 Lab이다.
+이번 Lab은 마방진 게임이다. 드라마 "뿌리깊은 나무" 에서 어린 세종으로 나왔던 송중기가 시간을 보내기 위해 열심히 풀었던 문제이기도 하다
+
+ ![송중기는 잘 생겼다](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/ex_lab_1_maqic_square/magic_square.png)
+
+마방진 문제는 의외로 간단하다. 그러나 로직을 for문과 if문으로 표현하는데 익숙하지 않다면 표현하는데 상당한 어려움을 겪게 될 것이다. 
 
 ## 숙제 template 파일 다운로드
 먼저 숙제 template 파일을 cs50 서버로 부터 다운로드 받는다. 로그인 후 나타나는 bash shell에서 다음과 같은 명령을 입력하자.
 ```bash
- python3.4 submit_assignment.py -get gowithflow
+python3.4 submit_assignment.py -get magic_square
 ```  
-정상적으로 다운했다면 현재 디렉토리에 `gowithflow.py` 파일 생성되었을 것이다. `ls` 명령어로 확인하자.
+정상적으로 다운했다면 현재 디렉토리에 `magic_square.py` 파일 생성되었을 것이다. `ls` 명령어로 확인하자.
 
-## 수정 해야할 함수 종류들
-숙제 파일을 다운로드 후 `vi gowithflow.py` 명령어를 입력하여 숙제 파일을 살펴보자. 참고로 본 강의의 Lab 구성은 Lab #5나 Lab #6처럼 `main()` 함수 자체를 수정해서 전체 프로그램 목적에 맞게 프로그램을 작성하는 Lab도 있고, 본 Lab #6나 Lab #5 처럼 단위 함수를 수정하여 단순히 기능들을 연습하는 Lab도 있다. 단순히 기능 연습만으로 프로그램을 짤 수 없고, 로직에 대한 이해가 어렵기 때문에 보통 한 차수의 Lab은 두개이상이다. 애정이 있어서 Lab이 많은 거니 너무 화를 내지 말자.
-본 Lab에서 수정해야할 함수 목록은 아래와 같다.
+## baseball_game.py 파일 Overview
+`vim editor`로 `magic_square.py`을 열어 전체적인 개요를 보자. `vi magic_square.py`명령으로 파일을 열어보면 `main` 함수와 여러개의 함수들이 존재할 것이다. 각 함수들은 여러분께서 직접 작성해서 제출해야 하는 함수이고, `main` 함수는 실제 마방진 프로그램을 실행하는 함수이다. 각 함수의 구현 내용은 아래와 같다.
 
 함수           | 설명 
 --------       | ---
-sum_of_list      | 숫자 값으로 구성된 list를 입력받아 list element들의 합을 반환한다. 
-merge_and_sort    | 숫자 또는 문자로만 구성된 두 개의 list를 입력받아, 두 list을 합치고 정렬한 후 반환한다. 
-delete_a_list_element   | list와 기본 데이터 Type 값을 입력받아, 입력받은 기본 데이터 값이 list에 포함되어 있다면 해당 값이 제거된 list를, 포함되어 있지 않다면 Integer Type의 0 을 반환한다.
-comparison_list_size   | 두 개의 list를 입력받아, 두 list의 길이(크기)를 비교하고 둘 중 큰 리스트를 반환한다.
-odd_even_check | 두 개의 Integer Type 값을 입력받아, 두 값의 합이 짝수면 'Even', 홀수이면 'Odd'의 문자열을 반환한다.
-discount_price | 물건의 가격에 해당하는 price를 숫자형 값을 입력받아, 해당 값이 100,000 미만이면 10% 할인된 값을, 100,000 이상이면 20% 할인된 값을 반환한다.
-find_smallest_value | 숫자형 값으로 이루어진 list를 입력받아, 가장 작은 element을 반환한다.
-binary_converter | 양수 Integer Type의 값을 입력받아, 해당 값을 2진수로 바꾼 문자열 Type의 값을 반환한다.
-number_of_cases | 숫자 또는 문자 값으로 이루어진 list을 입력받아, 해당 list의 element 값들 조합의 모든 경우의 수를 반환한다. 단 이때 중복되는 조합은 제거한다.
+get_zero_matrix    | 정수형(integer)값을 N을 입력받아, N by N 정사각 행렬 형태인 two dimensional list를 반환함. list내 모든 element의 값은 0으로 초기화되어 있음
+is_validate_number | 문자열(string) 값을 입력받아, 값이 정수형 문자열이고 3보다 크고 20보다 작을 경우에는 True 그렇지 않을 경우에는 False를 반환함
+is_4even_number    | 정수형(integer)값을 N을 입력받아, N이 4의 배수이면 True 그렇지 않으면 False를 반환함
+is_odd_number      | 정수형(integer)값을 N을 입력받아, N이 홀수이면 True 그렇지 않으면 False를 반환함
+get_4even_magic_square | 4의 배수인 정수형(integer) 문자열(string)값 N을 입력받아, 마방진으로 구성된 N by N 정사각 행렬을 반환함. 반환되는 정사각행렬은 two dimensional list로 되어있음  
+get_odd_magic_square   | 홀수인 정수형(integer) 문자열(string)값 N을 입력받아, 마방진으로 구성된 N by N 정사각 행렬을 반환함. 반환되는 정사각행렬은 two dimensional list로 되어있음  
+is_magic_sqaure        | 정사각행렬 형태의 two dimensional list를 입력받아, 입력받은 list가 마방진인지 아닌 확인함
+
+## 마방진 이해하기
+마방진은 
+
+- n*n개의 수를 가로, 세로, 대각선 방향의 수를 더하면 모두 같은 값이 나오도록 n × n 행렬에 배열한 것
+- 일반적으로 마방진의 각 칸에는 1부터 n*n까지의 수가 한 개씩 들어감. n이 2일 때를 제외하고 항상 존재
+
+간단한 3 by 3 행렬의 마방진은 다음 예제와 같다 ([메모리스트의 상상 노트][1]).
+
+![마방진 예제](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/ex_lab_1_maqic_square/magic_square_example.png
+)
+
 
 ## 수정후 테스트 하기  
 제시된 각 함수를 위의 목적에 맞게 수정한 후 테스트를 실시해야 한다. 이번 부터는 특별한 테스트 코드를 제공해주지 않는다. 수강자가 직접 `python shell`이나 `main`함수에 수정 코드를 작성하여 실행해보기 바란다. 단, 테스트 코드예제는 각 함수의 주석(comment) 형태로 달려 있으니, 확인해 보기 바란다.
@@ -76,9 +88,10 @@ delete_a_list_element |       PASS |             Good Job
 아직도 몇몇 분들은 제출하기 전에 해당 코드를 테스트해보지 않고 제출한다. `unsupported error`가 가끔 나는데, 코드 자체가 분석 불가능할 경우나는 에러로 얼마나 수강자가 숙제에 무심한지 티를 내는 것이다. 반드시 `bash shell`에서 `python3.4 gowithflow.py` 명령으로 실행을 해보고 문제가 없을 경우에만 제출하도록 하자. 물론, 위의 명령을 실행하기 위해서는 자기 나름대로 테스트 코드를 만들어 봐야 한다.
 
 ## Next Work
-이번 숙제는 사람에 따라 굉장히 어렵게 느끼기도 했을 것이다. 그 이유는 처음으로 로직이 숙제에 들어갔기 때문이다. 거의 모든 컴퓨터 프로그램은 로직에 의해 움직이다. 조금 난해하더라도 반드시 스스로의 힘으로 작성해야 머리에 남을 것이다. 이번 차시에는 Lab은 두개밖에 없다. 한 개만 더해보자.
+Extreme Lab은 사실 A+를 받기 위한 필수 관문이다. 아무나 쉽게할 수 있는 
 
 > **Human knowledge belongs to the world** - from movie 'Password' -
 
 ## Footnotes
 
+[1]: http://memorist.tistory.com/151
