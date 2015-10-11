@@ -17,7 +17,7 @@ python3.4 submit_assignment.py -get magic_square
 ```  
 정상적으로 다운했다면 현재 디렉토리에 `magic_square.py` 파일 생성되었을 것이다. `ls` 명령어로 확인하자.
 
-## baseball_game.py 파일 Overview
+## magic_square.py 파일 Overview
 `vim editor`로 `magic_square.py`을 열어 전체적인 개요를 보자. `vi magic_square.py`명령으로 파일을 열어보면 `main` 함수와 여러개의 함수들이 존재할 것이다. 각 함수들은 여러분께서 직접 작성해서 제출해야 하는 함수이고, `main` 함수는 실제 마방진 프로그램을 실행하는 함수이다. 각 함수의 구현 내용은 아래와 같다.
 
 함수           | 설명 
@@ -28,7 +28,7 @@ is_4even_number    | 정수형(integer)값을 N을 입력받아, N이 4의 배�
 is_odd_number      | 정수형(integer)값을 N을 입력받아, N이 홀수이면 True 그렇지 않으면 False를 반환함
 get_4even_magic_square | 4의 배수인 정수형(integer) 문자열(string)값 N을 입력받아, 마방진으로 구성된 N by N 정사각 행렬을 반환함. 반환되는 정사각행렬은 two dimensional list로 되어있음  
 get_odd_magic_square   | 홀수인 정수형(integer) 문자열(string)값 N을 입력받아, 마방진으로 구성된 N by N 정사각 행렬을 반환함. 반환되는 정사각행렬은 two dimensional list로 되어있음  
-is_magic_sqaure        | 정사각행렬 형태의 two dimensional list를 입력받아, 입력받은 list가 마방진인지 아닌 확인함
+is_magic_square      | 정사각행렬 형태의 two dimensional list를 입력받아, 입력받은 list가 마방진인지 아닌 확인함
 
 ## 마방진 이해하기
 마방진은 
