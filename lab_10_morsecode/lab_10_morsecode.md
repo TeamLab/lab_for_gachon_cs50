@@ -44,7 +44,18 @@ python3.4 submit_assignment.py -get morsecode
 입력되면 다운로드 안내 메세지와 함께 `morsecode.py` 파일이 다운로드 된다.
 
 ## 수정전 알아두어야 할 파이썬 함수 `join`
-이번 Lab을 진행하기전에 알아두고 시작하면 좋은 
+이번 Lab을 진행하기전에 알아두고 시작하면 좋은 파이썬 함수가 있다. 바로 List에 있는 값들을 String type의 값으로 변환 시켜줄때 사용하는 join 함수이다. 함수의 사용법은 아래와 같다.
+
+```python
+>>> test_list = ["a","b","c","d","e"]
+>>> "-".join(test_list)
+'a-b-c-d-e'
+>>> ".".join(test_list)
+'a.b.c.d.e'
+>>> " ".join(test_list)
+'a b c d e'
+```
+위 코드에서 보듯이 `join` 함수를 사용법 `"연결부호".join(연결할 리스트 변수)` 로 이루어 져있다. 부호가 변환에 따라 연결된 List 값도 각각 변환되어 출력된다. `join`함수는 변환된 모스부호를 연결해서 표현할때 유용하게 사용될 수 있는 함수이므로 참고하기 바란다.
 
 ## baseball_game.py 파일 Overview
 `vim editor`로 `morsecode.py`을 열어 전체적인 개요를 보자. `vi baseball_game.py`명령으로 파일을 열어보면 `main` 함수와 여러개의 함수들이 존재할 것이다. 각 함수들은 여러분께서 직접 작성해서 제출해야 하는 함수이고, `main` 함수는 실제 morsecode를 실행하는 함수이다. 먼저 본 Lab에서 제공하는 두개의 Helper 함수를 보자 
@@ -190,7 +201,7 @@ get_cleaned_english_sentence |       PASS |             Good Job
 ```  
 
 ## Next Work
-이제 여러분은 프로그래밍을 위한 거대한 한발을 내딛었다고 생각한다. 이때까지는 A,B, C를 부르거나 기껏해야 "How are you? Fine thank you, and you" 정도를 읊었다면 이제 프로그래밍으로 쉬운 어린이 "팝송" 한곡 부른 정도라고나 할까? 여러분들은 충분히 잘했다. 오늘 자기전에 맥주한잔을 마시면서 자신이 무한한 가능성이 있는 존재임을 깨닫기 바란다. 여기까지 와줘서 고맙다. 
+꽤 많은 프로그램을 짜다보면 이 정도 Lab은 그다지 어렵지 않게 느껴질 수도 있다. 점점 Lab의 수준이 낮아지므로 이제 조금 긴장을 풀고 한개씩 해결해 나가는 것을 추천한다. 다음 시간에는 File Handling에 대한 Lab을 수행하게 된다. 앞으로는 훨씬 더 다양한 문제를 해결할 수 있을 것 이다.
 
 > **Human knowledge belongs to the world** - from movie 'Password' -
 
