@@ -43,6 +43,9 @@ python3.4 submit_assignment.py -get morsecode
 
 입력되면 다운로드 안내 메세지와 함께 `morsecode.py` 파일이 다운로드 된다.
 
+## 수정전 알아두어야 할 파이썬 함수 `join`
+이번 Lab을 진행하기전에 알아두고 시작하면 좋은 
+
 ## baseball_game.py 파일 Overview
 `vim editor`로 `morsecode.py`을 열어 전체적인 개요를 보자. `vi baseball_game.py`명령으로 파일을 열어보면 `main` 함수와 여러개의 함수들이 존재할 것이다. 각 함수들은 여러분께서 직접 작성해서 제출해야 하는 함수이고, `main` 함수는 실제 morsecode를 실행하는 함수이다. 먼저 본 Lab에서 제공하는 두개의 Helper 함수를 보자 
 
@@ -167,25 +170,24 @@ Wrong Input
 ## 숙제 제출하기
 모든 함수를 다 수정했다면, 아래와 같이 제출하자
 ```bash
- python3.4 submit_assignment.py -submit baseball_game.py
+ python3.4 submit_assignment.py -submit morsecode.py
 ```  
 제대로 작성했다면 아래와 같은 메세지가 뜰 것이다.
 ```python
 -------------------- | ---------- | --------------------
        Function Name |    Passed? |             Feedback
 -------------------- | ---------- | --------------------
-            is_digit |       PASS |             Good Job
-              is_yes |       PASS |             Good Job
-is_duplicated_number |       PASS |             Good Job
-               is_no |       PASS |             Good Job
- get_strikes_or_ball |       PASS |             Good Job
- is_validated_number |       PASS |             Good Job
-is_between_100_and_999 |       PASS |             Good Job
+is_validated_morse_code |       PASS |             Good Job
+  encoding_character |       PASS |             Good Job
+     is_help_command |       PASS |             Good Job
+   decoding_sentence |       PASS |             Good Job
+  decoding_character |       PASS |             Good Job
+is_validated_english_sentence |       PASS |             Good Job
+get_cleaned_english_sentence |       PASS |             Good Job
                 main |       PASS |             Good Job
-get_not_duplicated_three_digit_number |       PASS |             Good Job
+   encoding_sentence |       PASS |             Good Job
 -------------------- | ---------- | --------------------
 ```  
-아마도 정말로 감격 스러운 순간일 것이다. 고생했다. 
 
 ## Next Work
 이제 여러분은 프로그래밍을 위한 거대한 한발을 내딛었다고 생각한다. 이때까지는 A,B, C를 부르거나 기껏해야 "How are you? Fine thank you, and you" 정도를 읊었다면 이제 프로그래밍으로 쉬운 어린이 "팝송" 한곡 부른 정도라고나 할까? 여러분들은 충분히 잘했다. 오늘 자기전에 맥주한잔을 마시면서 자신이 무한한 가능성이 있는 존재임을 깨닫기 바란다. 여기까지 와줘서 고맙다. 
