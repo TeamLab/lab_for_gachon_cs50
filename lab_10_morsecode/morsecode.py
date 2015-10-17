@@ -234,7 +234,7 @@ def encoding_sentence(english_sentence):
     """
     Input:
         - english_sentence : 문자열 값으로 모스 부호로 변환이 가능한 영어문장
-    Output:
+    Output:`
         - 입력된 영어문장 문자열 값을 모스부호로 변환된 알파벳으로 변환한 문자열
           단 양쪽 끝에 빈칸은 삭제한다.
     Examples:
