@@ -38,99 +38,48 @@ get_number_of_target_words | 문자열값으로 filename과 찾고자하는 targ
 
 
 ## 결과확인
-너무 쉽다. 아마도 결과는 아래와 같이 나올 것이다.
+너무 쉽다. bash shell에서 test 한다면 다음과 같은 결과가  나올 것이다.
 
-```python
-def main():
-    print("Morse Code Program!!")
-    # ===Modify codes below=============
-
-
-
-    # ==================================
-    print("Good Bye")
-    print("Morse Code Program Finished!!")
+```bash
+[GCC 4.8.2] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import file_io_example as fie
+>>> fie.get_file_contents("1984.txt").split("\n")[0]
+'GEORGE ORWELL'
+>>> fie.get_number_of_characters_with_blank("1984.txt")
+558840
+>>> fie.get_number_of_characters_without_blank("1984.txt")
+459038
+>>> fie.get_number_of_lines("1984.txt")
+1414
+>>> fie.get_number_of_target_words("1984.txt", "Hi")
+3938
+>>> fie.get_number_of_target_words("1984.txt", "had")
+1327
+>>> exit()
 ```
-`main` 함수는 다음과 같은 규칙을 가진다.
-
-1. 사용자가 0을 입력하면 종료된다.
-2. 사용자가 대소문자에 상관없이 "h"또는 "help"를 입력하면 `get_help_message` 함수를 호출하여 아래와 같이 출력된다. 
-```python
-Input your message(H - Help, 0 - Exit): H
-HELP - International Morse Code List
-A: .-   B: -... C: -.-. D: -..  E: .
-F: ..-. G: --.  H: .... I: ..   J: .---
-K: -.-  L: .-.. M: --   N: -.   O: ---
-P: .--. Q: --.- R: .-.  S: ...  T: -
-U: ..-  V: ...- W: .--  X: -..- Y: -.--
-Z: --..
-```
-3. 모스부호로 변환이 가능한 알파벳 문장이 입력되면 모스부호로 변환된 값이 출력된다.
-```python
-Input your message(H - Help, 0 - Exit): SOS
-... --- ...
-Input your message(H - Help, 0 - Exit): Hello!
-.... . .-.. .-.. ---
-Input your message(H - Help, 0 - Exit): This is Gachon
-- .... .. ...  .. ...  --. .- -.-. .... --- -.
-```
-4. 알파벳으로 변환이 가능한 모스부호가 입력되면 알파벳으로 변환해준다.
-```python
-Input your message(H - Help, 0 - Exit): ... --- ...
-SOS
-Input your message(H - Help, 0 - Exit): ... . ...
-SES
-Input your message(H - Help, 0 - Exit): . -..- ---
-EXO
-Input your message(H - Help, 0 - Exit): .... --- -
-HOT
-Input your message(H - Help, 0 - Exit): . -..- .. -..
-EXID
-```
-5. 그외 변환이 불가능한 입력일 경우 에러 메세지를 출력한다.
-```python
-Input your message(H - Help, 0 - Exit): I'm Gachon.
-Wrong Input
-Input your message(H - Help, 0 - Exit): This is "CS50".
-Wrong Input
-Input your message(H - Help, 0 - Exit): Hello 123!
-Wrong Input
-```
-
-실제 실행된 프로그램의 예제화면은 아래와 같다.
-
-![프로그램 실행 예시](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_10_morsecode/implementation_example.png)
-
 
 ## 숙제 제출하기
 모든 함수를 다 수정했다면, 아래와 같이 제출하자
 ```bash
- python3.4 submit_assignment.py -submit morsecode.py
+ python3.4 submit_assignment.py -submit file_io_example.py
 ```  
 제대로 작성했다면 아래와 같은 메세지가 뜰 것이다.
-```python
+```bash
 -------------------- | ---------- | --------------------
        Function Name |    Passed? |             Feedback
 -------------------- | ---------- | --------------------
-is_validated_morse_code |       PASS |             Good Job
-  encoding_character |       PASS |             Good Job
-     is_help_command |       PASS |             Good Job
-   decoding_sentence |       PASS |             Good Job
-  decoding_character |       PASS |             Good Job
-is_validated_english_sentence |       PASS |             Good Job
-get_cleaned_english_sentence |       PASS |             Good Job
-                main |       PASS |             Good Job
-   encoding_sentence |       PASS |             Good Job
+ get_number_of_lines |       PASS |             Good Job
+   get_file_contents |       PASS |             Good Job
+get_number_of_characters_with_blank |       PASS |             Good Job
+get_number_of_characters_without_blank |       PASS |             Good Job
+get_number_of_target_words |       PASS |             Good Job
 -------------------- | ---------- | --------------------
 ```  
 
 ## Next Work
-꽤 많은 프로그램을 짜다보면 이 정도 Lab은 그다지 어렵지 않게 느껴질 수도 있다. 점점 Lab의 수준이 낮아지므로 이제 조금 긴장을 풀고 한개씩 해결해 나가는 것을 추천한다. 다음 시간에는 File Handling에 대한 Lab을 수행하게 된다. 앞으로는 훨씬 더 다양한 문제를 해결할 수 있을 것 이다.
+이번 랩은 너무 쉬우서 아마도 수업시간에 집에 하고 가는 사람이 많을 거 같다. 걱정말자 아직도 우리에겐 Text 분석까지 3개의 Lab이 남았다. 3개의 Lab만 끝나면 이번 학기가 끝나고 놀수 있다. 좋지 아니한가?
 
 > **Human knowledge belongs to the world** - from movie 'Password' -
 
 ## Footnotes
-
-<b id="f1">1</b>: [Morse Code Wiki][1] 페이지로 이동하면 화단에 Morse Code를 들을 수 있다. [↩](#MorseCodeWiki)
-
-[1]: https://en.wikipedia.org/wiki/Morse_code 
