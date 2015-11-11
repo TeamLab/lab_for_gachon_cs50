@@ -89,6 +89,10 @@ def get_attribute_data(stock_data, attribue, year=None, month=None):
         >>> url = 'http://real-chart.finance.yahoo.com/table.csv?s=005930.KS&a=0&b=1&c=2013&d=11&e=31&f=2015&g=d'
         >>> stock_data = sdc.get_stock_data(url)
         >>> header = sdc.get_header_data(stock_data)
+        >>> sdc.get_attribute_data(stock_data, "High")[:2]
+        [['Date', 'High'], ['2015-11-10', '1341000.00']]
+        >>> sdc.get_attribute_data(stock_data, "High", 2013)[:2]
+        [['Date', 'High'], ['2013-12-31', '1372000.00']]
         >>> sdc.get_attribute_data(stock_data, "High", 2014, 12)[:2]
         [['Date', 'High'], ['2014-12-31', '1327000.00']]
         >>> sdc.get_attribute_data(stock_data, header[1], 2013, 12)[:2]
