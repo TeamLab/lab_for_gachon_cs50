@@ -72,7 +72,7 @@ python3.4 submit_assignment.py -get stock_data_crawler
 
 함수           | 설명 
 --------       | ---
-get_stock_data | url_address를 Input 변수로 넣으면 Yahoo 서버에 요청하면 해당 정보를 다운로드 받은후 Two Dimensional List 변환하여 반환함
+get_stock_data | url_address를 Input 변수로 넣으면 Yahoo 서버에 요청하면 해당 정보를 다운로드 받은후 Two Dimensional List 변환하여 반환함, Two Dimenstional List에는 0번째 index의 Header Field list가, 다음 index부터는 데이터가 일별로 list가 들어가 있음
 get_header_data | get_stock_data 함수의 반환 값을 Input 변수로 넣으면 Header Filed에 해당하는 값만 추출하여 list로 반환함
 get_attribute_data | get_stock_data 함수의 Return 값, 추출하고자 하는 Header Field의 이름, 추출하고자 하는 년도, 월을 Input 변수로 입력받으면 Date Field와 해당 조건의 값만 추출하여 list로 반환함
 get_average_value_of_attribute | get_stock_data 함수의 Return 값, 추출하고자 하는 Header Field의 이름, 추출하고자 하는 년도, 월을 Input 변수로 입력받으면 추출된 값의 평균을 계산하여 Float Type으로 반환함 
