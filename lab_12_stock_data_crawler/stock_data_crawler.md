@@ -44,95 +44,114 @@ g |기간  |d:일, w :주, m:월  | v:'배당'만 표시
 
 해당 주소를 웹 브라우저에 넣으면 table.csv라는 파일을 다운로드 받게 되고, 일반적으로 메모장을 통해서도 열 수 있다. 실제 파일을 열면 아래와 같이 보일 것이다. 
 
- ![송중기는 잘 생겼다](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/ex_lab_1_maqic_square_game/magic_square.png)
- 
-Data_ScreenShot
+ ![데이터다 데이터다!](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_12_stock_data_crawler/Data_ScreenShot.png)
 
-처음으로 나오는 Extreme Homework. 이때까지 모든 Lab은 모두가 할 수 있게 설계되었다면 이번 숙제는 정말 열심히 따라온 학생들만 풀수 있는 어려운 Lab이다.
-이번 Lab은 마방진 게임이다. 드라마 "뿌리깊은 나무" 에서 어린 세종으로 나왔던 송중기가 시간을 보내기 위해 열심히 풀었던 문제이기도 하다
+조금 복잡해 보이지만, 간단히 설명을 하자면 본 데이터의 첫 번째 줄인 Header Filed는  `Date`,`Open`,`High`,`Low`,`Close`,`Volume`,`Adj Close`로 구성되어 있고, 다음 줄 부터 데이터의 실제 값이 존재한다. 한줄이 띄어져야 할 거 같은 곳에는 모두 동그라미 검은색 네모에 동그라미가 들어가 있는데 이는 Encoding 문제로 리눅스의 줄바꿈 기호라고 생각하면 된다. 리눅스에서 데이터를 다운로드 받을려면 다음과 같이 입력한 후, vi editor로 열어볼 수 있다.
 
- ![송중기는 잘 생겼다](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/ex_lab_1_maqic_square_game/magic_square.png)
+```bash
+wget http://real-chart.finance.yahoo.com/table.csv?s=005930.KS&a=0&b=1&c=2013&d=11&e=31&f=2013&g=d
+```  
 
-마방진 문제는 의외로 간단하다. 그러나 로직을 for문과 if문으로 표현하는데 익숙하지 않다면 표현하는데 상당한 어려움을 겪게 될 것이다. 
+각 header filed의 의미는 아래와 같다.
+
+Open | Close | High | Low | Volume | Adj Close
+------|------|------|------|------|------
+시작가 | 종가 | 최고가 | 최저가 | 거래량 | 수정 종가 
+
+자 이제 데이터에 대한 기초적인 이해가 끝났으니 숙제를 시작해 보도록 하자 
 
 ## 숙제 template 파일 다운로드
 먼저 숙제 template 파일을 cs50 서버로 부터 다운로드 받는다. 로그인 후 나타나는 bash shell에서 다음과 같은 명령을 입력하자.
 ```bash
-python3.4 submit_assignment.py -get magic_square
+python3.4 submit_assignment.py -get stock_data_crawler
 ```  
-정상적으로 다운했다면 현재 디렉토리에 `magic_square_game.py` 파일 생성되었을 것이다. `ls` 명령어로 확인하자.
+정상적으로 다운했다면 현재 디렉토리에 `stock_data_crawler.py` 파일 생성되었을 것이다. `ls` 명령어로 확인하자.
 
-## baseball_game.py 파일 Overview
-`vim editor`로 `magic_square.py`을 열어 전체적인 개요를 보자. `vi magic_square_game.py`명령으로 파일을 열어보면 `main` 함수와 여러개의 함수들이 존재할 것이다. 각 함수들은 여러분께서 직접 작성해서 제출해야 하는 함수이고, `main` 함수는 실제 마방진 프로그램을 실행하는 함수이다. 각 함수의 구현 내용은 아래와 같다.
+## stock_data_crawler.py 파일 Overview
+`vim editor`로 `stock_data_crawler.py`을 열어 전체적인 개요를 보자. `vi stock_data_crawler.py`명령으로 파일을 열어보면 `main` 함수와 여러개의 함수들이 존재할 것이다. 각 함수들은 여러분께서 직접 작성해서 제출해야 하는 함수이고, `main` 함수는 실제 주식 정보를 요청하여 프로그램을 실행하는 함수이다. 각 함수의 구현 내용은 아래와 같다.
 
 함수           | 설명 
 --------       | ---
-get_zero_matrix    | 정수형(integer)값을 N을 입력받아, N by N 정사각 행렬 형태인 two dimensional list를 반환함. list내 모든 element의 값은 0으로 초기화되어 있음
-is_validate_number | 문자열(string) 값을 입력받아, 값이 정수형 문자열이고 3보다 크고 20보다 작을 경우에는 True 그렇지 않을 경우에는 False를 반환함
-is_4even_number    | 정수형(integer)값을 N을 입력받아, N이 4의 배수이면 True 그렇지 않으면 False를 반환함
-is_odd_number      | 정수형(integer)값을 N을 입력받아, N이 홀수이면 True 그렇지 않으면 False를 반환함
-get_4even_magic_square | 4의 배수인 정수형(integer) 문자열(string)값 N을 입력받아, 마방진으로 구성된 N by N 정사각 행렬을 반환함. 반환되는 정사각행렬은 two dimensional list로 되어있음  
-get_odd_magic_square   | 홀수인 정수형(integer) 문자열(string)값 N을 입력받아, 마방진으로 구성된 N by N 정사각 행렬을 반환함. 반환되는 정사각행렬은 two dimensional list로 되어있음  
-is_magic_sqaure        | 정사각행렬 형태의 two dimensional list를 입력받아, 입력받은 list가 마방진인지 아닌 확인함
+get_stock_data | url_address를 Input 변수로 넣으면 Yahoo 서버에 요청하면 해당 정보를 다운로드 받은후 Two Dimensional List 변환하여 반환함
+get_header_data | get_stock_data 함수의 반환 값을 Input 변수로 넣으면 Header Filed에 해당하는 값만 추출하여 list로 반환함
+get_attribute_data | get_stock_data 함수의 Return 값, 추출하고자 하는 Header Field의 이름, 추출하고자 하는 년도, 월을 Input 변수로 입력받으면 Date Field와 해당 조건의 값만 추출하여 list로 반환함
+get_average_value_of_attribute | get_stock_data 함수의 Return 값, 추출하고자 하는 Header Field의 이름, 추출하고자 하는 년도, 월을 Input 변수로 입력받으면 추출된 값의 평균을 계산하여 Float Type으로 반환함 
+write_csv_file_by_result | get_stock_data 함수의 반환 값 또는 get_attribute_data 함수의 반환값, 생성하고자 하는 파일 이름을 String Type의 Input 변수로 넣으면, 입력된 List 값이 들어 있는 파일을 생성함  
+separate_user_query | 사용자의 입력 값을 `,`을 기준 값으로 list로 변환한 후   반환함, 이때 반드시 각 값들은 앞뒤 빈칸이 제거된 후 list에 할당 되어야 함 ex) 입력예시: SAMSUNG, 2014-12, Open, ALL
 
-## 마방진 이해하기
-마방진은 
 
-- n*n개의 수를 가로, 세로, 대각선 방향의 수를 더하면 모두 같은 값이 나오도록 n × n 행렬에 배열한 것
-- 일반적으로 마방진의 각 칸에는 1부터 n*n까지의 수가 한 개씩 들어감. n이 2일 때를 제외하고 항상 존재
+## 개별 함수 설명 
+이번 랩은 추가 설명이 꽤 필요하기 때문에 필요한 함수들에 대해서 추가 설명을 하도록 한다.
 
-간단한 3 by 3 행렬의 마방진은 다음 예제와 같다 ([메모리스트의 상상 노트][1]).
+> get_stock_data
 
-![마방진 예제](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/ex_lab_1_maqic_square_game/magic_square_example.png)
+get_stock_data 함수에서는 아래 코드 처럼 urllib 이라는 모듈을 호출하여 데이터를 요청할 수 있다.
 
-이때 홀수 마방진과 4배수 짝수 마방진의 구성하는 방법은 아래와 같다. 
+```python
+url_address = 'http://real-chart.finance.yahoo.com/table.csv?s=005930.KS&a=0&b=1&c=2013&d=11&e=31&f=2015&g=d'
+r = urllib.request.urlopen(url_address)
+stock_data_string = r.read().decode("utf8")    # String Type으로 다운로드 받은 데이터
+print(stock_data_string[:100])
+```
 
-> 홀수 마방진 구성 방법
+위 코드의 결과 값들은 `'Date,Open,High,Low,Close,Volume,Adj Close\n2015-11-06,1343000.00,1348000.00,1330000.00,1338000.00,164'` 와 같이 String Type으로 출력이 될 것이다. `r=urllib.request.urlopen`는 특정 url 주소에서 데이터를 불러오는 구문이고, `r.read()` 해당 url에 값을 byte 값으로 호출 하는 함수이다. 호출된 byte 값을 string type으로 변환하기 위하여 `decode("utf8")`을 쓰며 여기서 `utf8`은 리눅스에서 흔히 사용하는 문자 인코딩 표준이며, 윈도우에 경우 `cp949`를 사용한다. 
+반환된 String 값은 `,`로 필드의 값이 구분되고, `\n`로 row가 구분된다.
 
-1. 정사각형의 맨 아랫줄 가운데에 숫자 1 을 둔다.
-2. 이전 숫자 위치에서 오른쪽 아래칸이 비어 있으면 다음 숫자를 채운다.
-3. 이전 숫자 위치에서 오른쪽 아래칸이 채워져 있으면 이전 숫자의 위칸에 다음 숫자를 채운다.
-4. 오른쪽 아래칸이 사각형의 영역 밖이면 다음의 규칙을 따른다.
-4-1. 수평 및 수직으로 이동해서 마지막 칸이 비어 있으면 해당 칸에 숫자를 채운다.
-4-2. 수평 및 수직으로 이동해도 칸이 없는 경우 이전의 숫자 위치 위쪽 칸에 다음 숫자를 채운다.
+> get_attribute_data & get_average_value_of_attribute
 
-> 4배수 짝수 마방진 구성 방법
+본 함수들은 `get_stock_data`에서 반환된 주식 정보에서 특정 필드의 값을 특정 기간으로 한정하여 추출하기 위한 함수들이다. 두 함수는 모두 아래와 같은 input 변수를 가진다.
 
-1. 대각선의 위치만 1 부터 시작해서 해당칸이 몇 번째 칸인지 숫자를 채운다.
-2. 맨 오른쪽 아래부터 위로 올라오면서 채워지지 않은 숫자를 순서대로 채운다.
+```python
+def get_attribute_data(stock_data, attribue, year=None, month=None):
+ pass
+```
 
-상당히 복잡해 보이지만 사실 인터넷에 코드는 많다. 찾아보고 해도 그 누구도 뭐라하지 않는다. 완성이 중요하다.  
+위 4가지 Input 변수 중 `stock_data`와 `attribute`는 각각 `get_stock_data`의 반환값과 추출하고자 하는 `header`이름을 의미한다. `header` 의 이름은 다음과 같이 `Open`,`Close`,`High`,`Low`,`Volume`,`Adj Close` 6개의 값이 존재한다. `stock_data`와 `attribute` Input 변수는 반드시 입력되어야 한다.
+year와 month의 경우는 반드시 입력하지 않아도 상관없는 값들이다. 
+year와 month가 입력되지 않으면 `stock_data`에서 `attribute`에 지정된 필드의 값만 추출한다. 추출되는 값은 반드시 `Date`와 `attribute`의 header field 이름이 함께 포함되어야 한다. 또한 `month`에 값이 지정되었을 경우, `year`에 반드시 값을 할당 하여야 한다. `year`에만 값을 지정하였을 경우에는 해당 년도에 해당하는 값만 반환한다. 실제 두 함수는 아래와 같이 사용가능하다.
+
+```python
+import stock_data_crawler as sdc
+url = 'http://real-chart.finance.yahoo.com/table.csv?s=005930.KS&a=0&b=1&c=2013&d=11&e=31&f=2015&g=d'
+stock_data = sdc.get_stock_data(url)
+header = sdc.get_header_data(stock_data)
+print(sdc.get_attribute_data(stock_data, "High"))
+print(sdc.get_attribute_data(stock_data, "Open", 2014))
+print(sdc.get_attribute_data(stock_data, "Close", 2013, 12))
+print(sdc.get_average_value_of_attribute(stock_data, "High", 2014, 12))
+
+```
+
+한 가지 주의할 점은 `year`와 `month`의 input 변수가 모두 int type 이라는 것이다. stock_data의 date 부분 값의 경우 `2014-01` 처럼 string type으로 지정되어 있는데 int type으로 들어가기 때문에 type 변환을 환후 값을 비교해줘야 한다.  
 
 ## main 함수 수정하기 
-위의 함수도 상당히 어렵지만 본 Lab의 가장 어려운 숙제는 바로 `main`함수를 수정하는 일이다. `main`함수의 기본 template은 아래와 같다.
+위의 함수들을 작성하고 나면 `main`함수를 수정해야 한다. `main`함수의 기본 template은 아래와 같다.
 
 ```python
 def main():
+    print("Stock Data Crawler Program!!")
     user_input = 999
-    print("Play Magic Square Game!!")
+    url = 'http://real-chart.finance.yahoo.com/table.csv?s=005930.KS&a=0&b=1&c=2013&d=11&e=31&f=2015&g=d'
     # ===Modify codes below=============
 
     # ==================================
-    print("Thank you for using this program")
-    print("End of the Game")
 ```
 
-메인 함수는 다음과 같은 규칙이 있다.
+본 숙제에 경우 url이 지정되어 있기 때문에 항상 삼성전자의 2013년 1월부터 2015년 11월 현재까지 데이터를 가져온다. 메인함수는 다음과 같은 규칙이 있다.
 
-> 입력검사
+`main` 함수는 다음과 같은 규칙을 가진다.
 
-1. 입력된 값이 문자열이나 소수점이 포함된 숫자일 경우 "Wrong Input! Input Again Please" 출력된다
-2. 입력된 값이 3보다 작거나 20보타 클 경우 "Wrong Input! Input Again Please" 출력된다
-3. 입력된 값이 홀수 또는 4배수 값이 아닐 경우에는 "Wrong Input, Only Input odd number or 4n number" 출력된다.
+1. 사용자가 0을 입력하면 종료된다.
+2. 사용자는 아래와 같은 형태로 명령을 입력하고 입력된 값에 따라 결과물을 출력해 준다. 첫 번째 `SAMSUNG`은 고정된 값으로 수정이 필요없고, `2014-12`는 추출하고자 하는 데이터의 년-월, `Open`은 추출할 필드이름, `ALL`은 추출 유형이다. 각 추출 유형의 설명은 아래 표와 같으며, 추출유형은 대소문자를 구분하지 않고 처리할 수 있어야 한다.
+```bash
+SAMSUNG, 2014-12, Open, ALL
+```
 
-사용자가 3~20 사이의 정수를 정확히 입력했을 경우 아래와 같이 출력된다.
-
-> 출력 결과
-
-1. Matrix 형태로 출력하되 출력되는 글자를 포함하여 5칸이 사용된다. 이때 사용하는 문법은 `"{:5d}".format(10)` 형태로 활용하면 위치를 조정하여 정수값을 출력할 수 있다.
-2. 마방진이 출력된후 각 줄의 합을 "The sum of each row is  15" 와 같은 형태로 출력한다.
-3. 전체 마방진의 값을 "The sum of the matrix is  45" 형태로 출력한다.
-4. 마지막 한줄은 띄워쓰기를 한다.
+추출유형 | 사용예시 | 설명 
+------|------|------
+ALL | SAMSUNG, 2014-12, High, ALL | 조건의 맞는 모든 데이터를 모두 추출하여 화면에 표시, get_attribute_data 함수를 사용함
+MEAN | SAMSUNG, 2014-12, Close, MEAN | 조건의 맞는 모든 데이터를 모두 추출하여 평균을 계산하여 화면에 표시 get_average_value_of_attribute 함수를  사용함
+FILE | SAMSUNG, 2014-12, Open, FILE, test.csv | 조건의 맞는 모든 데이터를 모두 추출한 후 파일로 저장하는 명령어 write_csv_file_by_result 사용함, 유의할점은 FILE을 입력할 경우, test.csv 처럼 파일명을 FILE 다음에 입력해 주어야 함
 
 실제로 작성된 프로그램의 실행화면은 다음과 같다.
 
