@@ -73,7 +73,7 @@ python3.4 submit_assignment.py -get stock_data_advance
 is_validate_url | 입력변수인 url_address를 Yahoo 서버에 요청하면 해당 url_address가 사용가능한지에 대해 확인하는 Helper Function, 따로 수정할 필요는 없음
 is_validate_date | 문자열로 yyyy/mm/dd의 형태로된 날짜 정보를 입력받아  조건에 맞는 경우 True, 그렇지 않을경우 False를 반환함, 1) 입력된 데이터를 "/"를 구분자로 나눴을 경우, 길이가 3이어야 함 2) yyyy: 년도는 2001년 부터 2015년까지 입력됨 3) mm: 월(month)정보는 1월 부터 12월까지 입력됨 4) dd: 일(day)는 1일 부터 31일까지 입력됨(월에 상관없음)
 is_validate_command | 사용자의 입력값과 stock_data의 header 값을 입력받아 사용자의 입력값이 처리가능할 경우 True, 그렇지 않을 경우 False를 반환함 (하단 참조)
-make_stock_data_url | yahoo finance의 csv 다운로드 입력 url를 입력된 7개의 변수를 바탕으로  생성함 base_url은 "http://real-chart.finance.yahoo.com/table.csv?" 이며, 차례로 입력변수로 아래와 같은 주소를 만듦
+make_stock_data_url | yahoo finance의 csv 다운로드 입력 url를 입력된 7개의 변수를 바탕으로  생성함 base_url은 "http://real-chart.finance.yahoo.com/table.csv?" 이며, 차례로 입력변수로 최종 주소를 만듦
 get_stock_data | url_address를 Input 변수로 넣으면 Yahoo 서버에 요청하면 해당 정보를 다운로드 받은후 Two Dimensional List 변환하여 반환함, Two Dimenstional List에는 0번째 index의 Header Field list가, 다음 index부터는 데이터가 일별로 list가 들어가 있음
 get_header_data | get_stock_data 함수의 반환 값을 Input 변수로 넣으면 Header Filed에 해당하는 값만 추출하여 list로 반환함
 get_attribute_data | get_stock_data 함수의 Return 값, 추출하고자 하는 Header Field의 이름을 입력받으면 Date Field와 해당 조건의 값만 추출하여 list로 반환함
@@ -136,8 +136,7 @@ def main():
 
 실제로 작성된 프로그램의 실행화면은 다음과 같다.
 
-![Stock Data Advance 실행화면 1](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_12_stock_data_crawler/result_screenshot_1.png)
-![Stock Data Advance 실행화면 2](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_12_stock_data_crawler/result_screenshot_2.png)
+![Stock Data Advance 실행화면 1](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/ex_lab_2_stock_data_advance/stock_data_advance_screenshot.png)
 
 
 ## 숙제 제출하기
@@ -145,7 +144,8 @@ def main():
 ```bash
  python3.4 submit_assignment.py -submit stock_data_advacne.py
 ```  
-제대로 작성했다면 아래와 같은 메세지가 뜰 것이다. 실행시 이전과 다르게 상당히 오랜시간이 걸릴 것이다. 그 이유는 코드를 테스트 하는 프로그램이 내부적으로 데이터를 다운로드 받고 하는 파일로 만드는 시간이 있기 때문이다 조금 기다려서 실행하면 결과가 나오니 중간에 끄거나 하지말자.
+
+제대로 작성했다면 아래와 같은 메세지가 뜰 것이다. 마찬가지로 실행시 오랜시간이 걸릴 것이다. 그 이유는 코드를 테스트 하는 프로그램이 내부적으로 데이터를 다운로드 받고 하는 파일로 만드는 시간이 있기 때문이다 조금 기다려서 실행하면 결과가 나오니 중간에 끄거나 하지말자.
 ```bash
 -------------------- | ---------- | --------------------
        Function Name |    Passed? |             Feedback
@@ -163,7 +163,8 @@ write_csv_file_by_result |       PASS |             Good Job
 ```  
 
 ## Next Work
-이제 이쯤되면 "나도 파이썬 조금은 할 줄 알아요" 라고 말할 수준은 된거 아닌가 싶다. 상당히 어려운 숙제임에도 불구하고 잘 따라와 줘서 고맙다. 여전히 많은 시간과 에너지가 소비되었겠지만, 이젠 꽤 보람차게 따라하고 있을 것이다. 앞으로도 좋은 코드 많이 작성하기 바란다. Good Luck.
+고생했다. 더 이상의 설명은 생략한다.
+
 
 > **Human knowledge belongs to the world** - from movie 'Password' -
 
