@@ -10,13 +10,13 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 
 ## .vimrc 설정 명령어
 
-vim editor의 설정을 바꾸기 위해서는 사용자의 Home directory <sup id="homedirctory">[1](#f1)</sup>에서 **.vimrc<sup id="vimrc">[2](#f2)</sup> 파일** 생성한 후, 설정을 위한 예약어<sup id="reserved_word">[3](#f3)</sup>를 입력한다. vim 설정을 위한 주요 예약어는 아래와 같다 ([Outsider's Dev Story][1] 발췌후 수정).
+vim editor의 설정을 바꾸기 위해서는 사용자의 Home directory <sup id="homedirectory">[1](#f1)</sup>에서 **.vimrc<sup id="vimrc">[2](#f2)</sup> 파일** 생성한 후, 설정을 위한 예약어<sup id="reserved_word">[3](#f3)</sup>를 입력한다. vim 설정을 위한 주요 예약어는 아래와 같다 ([Outsider's Dev Story][1] 발췌후 수정).
 
 예약어                   | 의미 
 --------                 | ---
 set autoindent           | 자동 들여쓰기
 set smartindent          | 스마트한 들여쓰기
-set nobackup             | 백업 파일을 안만듬
+set nobackup             | 백업 파일을 안만듦
 set ruler                | 화면 우측 하단에 현재 커서의 위치(줄,칸) 표시
 set shiftwidth=4         | 자동 들여쓰기 4칸, 4를 조절하여 사용 가능
 set number               | 행번호 표시, set nu 도 가능
@@ -26,9 +26,9 @@ set expandtab            | 탭대신 스페이스
 set hlsearch             | 검색어 강조, set hls 도 가능
 set ignorecase           | 검색시 대소문자 무시, set ic 도 가능
 set tabstop=4            | 탭을 4칸으로
-syntax on                |  구문강조 사용
-filetype indent on       |  파일 종류에 따른 구문강조
-set history=1000         |  vi 편집기록 기억갯수 .viminfo에 기록
+syntax on                | 구문강조 사용
+filetype indent on       | 파일 종류에 따른 구문강조
+set history=1000         | vi 편집기록 기억갯수 .viminfo에 기록
 
 > **Note:** 
 > 설정을 위한 예약어는 매우 다양하고 많기 때문에 모든 것을 기억할 필요는 없다. 필요할 때 마다 구글에서 "vimrc 설정", "vimrc 행번호" 등으로 검색을 실시할 것으로 권장한다.  
@@ -102,13 +102,13 @@ Hello World
 > **Human knowledge belongs to the world** - from movie 'Password' -
 
 ## Footnotes
-<b id="f1">1</b>: 리눅스 서버에 처음 로그인 했을 때 사용하는 디렉토리. 일반적으로 root 유저가 아닌 경우에는 home directory에서만 작업이 가능하다. 윈도우에서는 "내 문서" 또는 라이브러리가 이에 해당된다.[↩](#homedirctory)
+<b id="f1">1</b>: 리눅스 서버에 처음 로그인 했을 때 사용하는 디렉토리. 일반적으로 root 유저가 아닌 경우에는 home directory에서만 작업이 가능하다. 윈도우에서는 "내 문서" 또는 라이브러리가 이에 해당된다.[↩](#homedirectory)
 
 <b id="f2">2</b>: 일반적으로 리눅스에서 rc는 "run commands"를 의미하며, 해당 프로그램의 설정 파일로 활용된다.[↩](#vimrc)
 
 <b id="f3">3</b>: 프로그램을 실행하기 위해 약속된 단어들. 예를 들면, 윈도우 console에서는 dir 이라고 치면 파일 목록이 나타난다.[↩](#reserved_word)
 
-<b id="f4">4</b>: vi는 vi 편집기를 실행시키는 명령어, ~/ 는 사용자의 home direcoty를 의미하며 .vimrc 는 편집할 파일 이름이다. 즉 ~/.vimrc 는 사용자  home direcoty의 .vimrc 파일을 vi 편집기로 편집하도록 vi를 실행하라 라는 의미이다.[↩](#mark)
+<b id="f4">4</b>: vi는 vi 편집기를 실행시키는 명령어, ~/ 는 사용자의 home direcoty를 의미하며 .vimrc 는 편집할 파일 이름이다. 즉 ~/.vimrc 는 사용자  home directory의 .vimrc 파일을 vi 편집기로 편집하도록 vi를 실행하라 라는 의미이다.[↩](#mark)
 
 <b id="f5">5</b>: 파이썬으로 작성된 프로그램 파일은 확장자가 "py" 로 끝난다. [↩](#py_file)
 
