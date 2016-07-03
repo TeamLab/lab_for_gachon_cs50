@@ -103,13 +103,13 @@ def main():
     print (minus(3,5)) # Expected Result: -2
     print (minus(10,5) == 5) # Expected Result: True
     print (minus(10,15) == 5) # Expected Result: False
-    print ("Addition Test Closed \n")
+    print ("Minus Test Closed \n")
 
     print ("Multiplication Test")
     print (multiplication(3,5)) # Expected Result: 15
     print (multiplication(10,5) == 50) # Expected Result: True
     print (multiplication(10,-3) == 20) # Expected Result: False
-    print ("Addition Test Closed \n")
+    print ("Multiplication Test Closed \n")
 
     print ("division Test")
     print (division(5,5)) # Expected Result: 1
