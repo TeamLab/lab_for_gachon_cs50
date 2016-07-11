@@ -33,9 +33,7 @@ def main():
         print(combination_method(number_list))
     elif type_of_program == False:
         print(pambination_method(number_list))
- 
 
-
-
-main()
+if __name__ == "__main__":
+    main()
     

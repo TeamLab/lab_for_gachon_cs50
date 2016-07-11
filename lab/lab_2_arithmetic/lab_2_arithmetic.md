@@ -178,4 +178,4 @@ python3.4 submit_assignment.py -submit vimrc_test.py
 <b id="f7">7</b>: 실제 2014년 수강생들은 "I See~" 정도의 욕을 수업시간에 육성으로 터트렸다. 정상이다 걱정말자.[↩](#isee)
 
 
-[1]: https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/submit_assignment.py
+[1]: https://github.com/TeamLab/lab_for_gachon_cs50/blob/master/submit_assignment.py
