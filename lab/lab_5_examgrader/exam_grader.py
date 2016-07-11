@@ -60,7 +60,7 @@ def main():
     print_exam_grader(average_score)
 
     print("===========================")
-    print("End of Exame Grader Program")
+    print("End of Exam Grader Program")
 
 if __name__ == '__main__':
     main()

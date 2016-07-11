@@ -51,7 +51,7 @@ def number_to_str(float_number):
     # Output:
     #   -string: 문자열
     # Examples:
-    #   >>> number_t0_str(3)
+    #   >>> number_to_str(3)
     #   "3"
     #   ※ 파이썬 쉘에선 저렇게 출력되는데 리눅스 쉘에서 .py를 실행시키면 3으로 출력됨
     #   >>> number_to_str(-3.456)
@@ -122,7 +122,7 @@ def associative_law_add(a, b, c):
     # Output:
     #   -결합법칙이 적용되어 계산된 실수 값
     # Examples:
-    #   >>> commutative_law(3, 4, 5)
+    #   >>> commutative_law(3, 4, 5) `(#여기 이해안가요 호출하는 함수명이 다릅니다)`
     #   12
     # """
     # ===Modify codes below=================
@@ -222,28 +222,24 @@ def main():
     print("add_string_number Test")
     print(add_string_number("67", 5))  # Expected Result: "675"
     print(add_string_number("Gachon", 4) == 2)  # Expected Result: False
-    # Expected Result: True
-    print("====> ", add_string_number("Gachon", 15) == "Gachon15")
+    print("====> ", add_string_number("Gachon", 15) == "Gachon15")    # Expected Result: True
     print("add_string_number Test Closed \n")
 
     print("add_string_string Test")
-    print(add_string_string("1.4", "1.5"))  # Expected Result: "1.41.4"
+    print(add_string_string("1.4", "1.5"))  # Expected Result: "1.41.5"
     print(add_string_string("이길", "여") == 15)  # Expected Result: False
-    # Expected Result: False
-    print("====> ", add_string_string("이길", "여") == "이길여")
+    print("====> ", add_string_string("이길", "여") == "이길여") # Expected Result: True
     print("add_string_string Test Closed \n")
 
     print("associative_law_add Test")
     print(associative_law_add(3, 5, 4))  # Expected Result: 12
     print(associative_law_add(10, 5, 67) == 15)  # Expected Result: False
-    # Expected Result: False
-    print("====> ", associative_law_add(10, 5, 5) == 20)
-    print("associative_law_add Test iClosed \n")
+    print("====> ", associative_law_add(10, 5, 5) == 20) # Expected Result: True
+    print("associative_law_add Test Closed \n")
 
     print("associative_law_mutiple Test")
     print(associative_law_mutiple(3, 5, 2))  # Expected Result: 30
-    # Expected Result: True
-    print("====> ", associative_law_mutiple(10, 5, 1) == 50)
+    print("====> ", associative_law_mutiple(10, 5, 1) == 50)     # Expected Result: True
     print("associative_law_mutiple Test Closed \n")
 
     print("Exponent Test")

@@ -7,7 +7,7 @@ def is_positive_number(integer_str_value):
     #   - integer_str_value : 숫자형태의 문자열 값
     # Output:
     #   - integer_str_value가 양수일 경우에는 True,
-    #     integer로 변환이 안되거나, 0, 음수일 경우에는 flase
+    #     integer로 변환이 안되거나, 0, 음수일 경우에는 false
     # Examples:
     #   >>> import factorial_calculator as fc
     #   >>> fc.is_positive_number("100")

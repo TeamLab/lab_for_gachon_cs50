@@ -177,7 +177,7 @@ def get_stock_data(url_address):
         url_address (str): Yahoo 금융 서버에 주식 csv 데이터를 요청하는 URL 주소
 
     Returns:
-        list: Two Dimensioanl List 0번째 index에는 필드의 Header 정보를 포함하고 있으며,
+        list: Two Dimensional List 0번째 index에는 필드의 Header 정보를 포함하고 있으며,
         1번째 index부터 각 필드의 data를 가지고 있음
 
     Examples:
@@ -205,7 +205,7 @@ def get_header_data(stock_data):
         stock_data (list): get_stock_data 함수의 Return 값으로 나온 주식 정보 two dimensional list
 
     Returns:
-        list: 입력된 stcok_data list 값 중 0번째 index에 있는 header 정보만 추출하여 반환함
+        list: 입력된 stock_data list 값 중 0번째 index에 있는 header 정보만 추출하여 반환함
 
     Examples:
         >>> import stock_data_advance as sdc

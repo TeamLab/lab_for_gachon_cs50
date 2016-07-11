@@ -20,7 +20,7 @@ def get_stock_data(url_address):
         url_address (str): Yahoo 금융 서버에 주식 csv 데이터를 요청하는 URL 주소
 
     Returns:
-        list: Two Dimensioanl List 0번째 index에는 필드의 Header 정보를 포함하고 있으며,
+        list: Two Dimensional List 0번째 index에는 필드의 Header 정보를 포함하고 있으며,
         1번째 index부터 각 필드의 data를 가지고 있음
 
     Examples:
@@ -48,7 +48,7 @@ def get_header_data(stock_data):
         stock_data (list): get_stock_data 함수의 Return 값으로 나온 주식 정보 two dimensional list
 
     Returns:
-        list: 입력된 stcok_data list 값 중 0번째 index에 있는 header 정보만 추출하여 반환함
+        list: 입력된 stock_data list 값 중 0번째 index에 있는 header 정보만 추출하여 반환함
 
     Examples:
         >>> import stock_data_crawler as sdc
@@ -77,7 +77,7 @@ def get_attribute_data(stock_data, attribue, year=None, month=None):
 
     Args:
         stock_data (list): get_stock_data 함수의 Return 값으로 나온 주식 정보 two dimensional list
-        attribue (str): 추출하고자 하는 필드의 Header 이름, 대소문자를 구분함
+        attribute (str): 추출하고자 하는 필드의 Header 이름, 대소문자를 구분함
         year (int): 추출하고자 하는 년도, 입력하지 않을 경우 전체 값을 추출함 (default = None)
         month (int): 추출하고자 하는 월, 년도를 입력하지 않을 경우 입력할 수 없음 (default = None)
 
@@ -106,11 +106,11 @@ def get_attribute_data(stock_data, attribue, year=None, month=None):
     return result
 
 def get_average_value_of_attribute(stock_data, attribue, year=None, month=None):
-    """get_stock_data 함수의 Return 값,추출하고자 하는 Header의 이름, 추출하고자 하는 년도, 월을 입력받으면
+    """get_stock_data 함수의 Return 값,추출하고자하는 Header의 이름, 추출하고자 하는 년도, 월을 입력받으면
     해당 조건의 값의 평균을 float Type으로 반환함
 
     Note:
-        입력할 경우 stock_data, attribue는 필수 입력이나,
+        입력할 경우 stock_data, attribute는 필수 입력이나,
         year 값을 입력하지 않을 경우에는 attribute에 해당하는 전체 값,
         year 값만 입력할 경우에는 attribute와 년도에 해당하는 값을
         month까지 입력했을 경우, attribute와 년도, 월에 해당하는 값을 추출함
@@ -118,7 +118,7 @@ def get_average_value_of_attribute(stock_data, attribue, year=None, month=None):
 
     Args:
         stock_data (list): get_stock_data 함수의 Return 값으로 나온 주식 정보 two dimensional list
-        attribue (str): 추출하고자 하는 필드의 Header 이름, 대소문자를 구분함
+        attribute (str): 추출하고자 하는 필드의 Header 이름, 대소문자를 구분함
         year (int): 추출하고자 하는 년도, 입력하지 않을 경우 전체 값을 추출함 (default = None)
         month (int): 추출하고자 하는 월, 년도를 입력하지 않을 경우 입력할 수 없음 (default = None)
 

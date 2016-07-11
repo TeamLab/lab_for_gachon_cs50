@@ -7,7 +7,7 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 이번 Lab은 Text Handling 시리즈의 첫 번째 Lab이다. 이번 Lab의 목표는 간단한 파일을 다운로드 받고, 파일안에 있는 정보를 추출하는 것 이다. 다행이다. 진짜 쉽다. 함수도 5개 밖에 없다. 바로 본론으로 들어가자.
 
 ## 숙제 template 파일 다운로드
-먼저 숙제 template 파일을 cs50 서버로 부터 다운로드 받는다. 로그인 후 나타나는 `bash shell`에서 다음과 같은 명령을 입력하자. 이것부터 쉽게 느껴지지 않는가?
+먼저 숙제 template 파일을 cs50 서버로부터 다운로드 받는다. 로그인 후 나타나는 `bash shell`에서 다음과 같은 명령을 입력하자. 이것부터 쉽게 느껴지지 않는가?
 
 ```bash
 python3.4 submit_assignment.py -get file_io_example
@@ -38,7 +38,7 @@ get_number_of_target_words | 문자열값으로 filename과 찾고자하는 targ
 
 
 ## 결과확인
-너무 쉽다. bash shell에서 test 한다면 다음과 같은 결과가  나올 것이다.
+너무 쉽다. bash shell에서 test 한다면 다음과 같은 결과가 나올 것이다.
 
 ```bash
 [GCC 4.8.2] on linux
@@ -78,7 +78,7 @@ get_number_of_target_words |       PASS |             Good Job
 ```  
 
 ## Next Work
-이번 랩은 너무 쉬우서 아마도 수업시간에 집에 하고 가는 사람이 많을 거 같다. 걱정말자 아직도 우리에겐 Text 분석까지 3개의 Lab이 남았다. 3개의 Lab만 끝나면 이번 학기가 끝나고 놀수 있다. 좋지 아니한가?
+이번 랩은 너무 쉬우서 아마도 수업시간에 하고 집에 가는 사람이 많을 거 같다. 걱정말자. 아직도 우리에겐 Text 분석까지 3개의 Lab이 남았다. 3개의 Lab만 끝나면 이번 학기가 끝나고 놀 수 있다. 좋지 아니한가?
 
 > **Human knowledge belongs to the world** - from movie 'Password' -
 

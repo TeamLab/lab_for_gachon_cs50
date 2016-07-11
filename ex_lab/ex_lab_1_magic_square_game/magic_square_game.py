@@ -34,7 +34,7 @@ def is_validate_number(user_input):
     # Input:
     #   - user_input : 문자열
     # Output:
-    #   - 입력된 문자열이 정수형 문자열이며, 3보다 크고 20보다 작을 경우는 True
+    #   - 입력된 문자열이 정수형 문자열이며, 3보다 크고 20보다 작을 경우는 True `("여기 이해가 잘안가요! 3부터 시작되니간 3보다 -> 이상이 맞는게 아닐까요")`
     #     그렇지 않을 경우에는 False를 반환함
     # Examples:
     # >>> import magic_square as ms
@@ -150,13 +150,13 @@ def get_4even_magic_square(user_input):
     #  25], [24, 23, 43, 44, 45, 46, 18, 17], [49, 50, 14, 13, 12, 11, 55, 56], [57, 5
     # 8, 6, 5, 4, 3, 63, 64]]
     # '''
-    magic_sqaure_matrix = []
+    magic_square_matrix = []
 
     #  ===Modify codes below=============
 
 
     #  ===================================
-    return magic_sqaure_matrix
+    return magic_square_matrix
 
 def get_odd_magic_square(user_input):
     # '''
@@ -188,15 +188,15 @@ def get_odd_magic_square(user_input):
     # 4, 49], [78, 80, 95, 110, 125, 140, 155, 157, 3, 18, 33, 48, 63], [79, 94, 109,
     # 124, 139, 154, 169, 2, 17, 32, 47, 62, 77]]
     # '''
-    magic_sqaure_matrix = []
+    magic_square_matrix = []
 
     #  ===Modify codes below=============
 
 
     #  ===================================
-    return magic_sqaure_matrix
+    return magic_square_matrix
 
-def is_magic_sqaure(square):
+def is_magic_square(square):
     # '''
     # Input:
     #   - square : n by n 사이즈로 이루어진 two dimensional list
@@ -205,11 +205,11 @@ def is_magic_sqaure(square):
     #     그렇지 않을 경우 False
     # Examples:
     # >>> import magic_square as ms
-    # >>> ms.is_magic_sqaure([[1,2,3],[4,5,6],[7,8,9]])
+    # >>> ms.is_magic_square([[1,2,3],[4,5,6],[7,8,9]])
     # False
-    # >>> ms.is_magic_sqaure([[5,5,5],[4,5,6],[7,8,9]])
+    # >>> ms.is_magic_square([[5,5,5],[4,5,6],[7,8,9]])
     # False
-    # >>> ms.is_magic_sqaure([[8, 1, 6], [3, 5, 7], [4, 9, 2]])
+    # >>> ms.is_magic_square([[8, 1, 6], [3, 5, 7], [4, 9, 2]])
     # True
     # '''
     result = None
