@@ -1,20 +1,23 @@
 def input_number_check(user_input):
     # '''
     # Input :
-    #   -변수로써 받지 않고 input함수 사용하여 받을 것
-    #   -4C2를 하고싶으면 4,2로 입력할 것   
+    #   -문자열형태의 값
+    #   -4,2와 같이 숫자,숫자 형태의 값
     # Output :
-    #   -리스트형태로 반환할 것 
-    # Examples : 
+    #   -각 조건의 맞게 True, False, 리스트형태로 반환할 것
+    #    각 조건은 홈페이지 참조
+    # Examples :
     #   >>> import c_p as cp
-    #   >>> cp.input_number()
-    #   숫자들을 입력하세요. ex) 4C2 >> 4,2 :
-    #   숫자들을 입력하세요. ex) 4C2 >> 4,2 : 4,2
+    #   >>> cp.input_number_check(4,2)
     #   ['4', '2']
-    #   >>> cp.input_number()
-    #   숫자들을 입력하세요. ex) 4C2 >> 4,2 :
-    #   숫자들을 입력하세요. ex) 4C2 >> 4,2 : 4;2
-    #   error
+    #   >>> cp.input_number_check(0)
+    #   True
+    #   >>> cp.input_number_check(-1,2)
+    #   False
+    #   >>> cp.input_number_check(gachon)
+    #   False
+    #   >>> cp.input_number_check(123,gachon)
+    #   False
     # '''
     if user_input == '0':
         return True

@@ -1,4 +1,4 @@
-Working_Lab #1- Combination 계산기 (factorial_calculator)
+Working_Lab #1- Combination 계산기 (combination_calculator)
 =======
 Copyright 2016 © document created by TeamLab.Gachon@gmail.com
 
@@ -130,9 +130,11 @@ python3.4 submit_assignment.py -submit factorial_calculator.py
 -------------------- | ---------- | --------------------
        Function Name |    Passed? |             Feedback
 -------------------- | ---------- | --------------------
- get_factorial_value |       PASS |             Good Job
+ input_number_check  |       PASS |             Good Job
+ numerator_value_front_value_factorial |       PASS |             Good Job
+ denominator_value_front_minus_back_value_factorial |       PASS |             Good Job
+ denominator_value_back_value_factorial |       PASS |             Good Job
                 main |       PASS |             Good Job
-  is_positive_number |       PASS |             Good Job
 -------------------- | ---------- | --------------------
 ```  
 
