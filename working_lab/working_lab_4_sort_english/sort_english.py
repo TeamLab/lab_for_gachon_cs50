@@ -72,10 +72,44 @@ def count_element_method(value):
     return count_english
 
 def max_method(count_english):
+    # '''
+    # Input : 
+    #   -count_element_method(variable)의 결과값
+    #   -dict형태의 값
+    # Output :
+    #   -dict형태의 value값들 중에서 제일 큰값
+    #   -정수형태의 값
+    # Examples :
+    #   >>>import sort_english as se
+    #   >>>se.max_method({'C': 2, 'A': 1, 'D':2})
+    #   2
+    #   >>>se.count_element_method({'W': 3, 'Q': 4, 'F':1, 'A': 1, 'S': 2})
+    #   4
+    #   >>>se.count_element_method({})
+    #   error
+    # '''
     count_english_values = max(count_english.values())
     return count_english_values
 
 def check_method(count_english_values,count_english):
+    # '''
+    # Input : 
+    #   -input_english_value()의 결과값
+    #   -영어는 대문자만 있고 나머지는 상관없는 값
+    # Output :
+    #   -input값의 각각의 요소들의 개수를 계산하여 딕셔너리 형태의 결과 값
+    #   -대문자영어를 제외한 나머지 값들은 삭제됨
+    # Examples :
+    #   >>>import sort_english as se
+    #   >>>se.count_element_method("CCAD21D")
+    #   {'C': 2, 'A': 1, 'D':2}
+    #   >>>se.count_element_method("QWSASXFQ")
+    #   {'W': 2, 'Q': 2, 'F':1, 'A': 1, 'S': 2}
+    #   >>>se.count_element_method("")
+    #   {}
+    #   >>>se.count_element_method("123456")
+    #   {}
+    # '''
     list_of_count = []
     for value in count_english.values():
         list_of_count.append(value)
@@ -85,6 +119,24 @@ def check_method(count_english_values,count_english):
         return False
 
 def delete_method(count_english_values,count_english):
+    # '''
+    # Input : 
+    #   -input_english_value()의 결과값
+    #   -영어는 대문자만 있고 나머지는 상관없는 값
+    # Output :
+    #   -input값의 각각의 요소들의 개수를 계산하여 딕셔너리 형태의 결과 값
+    #   -대문자영어를 제외한 나머지 값들은 삭제됨
+    # Examples :
+    #   >>>import sort_english as se
+    #   >>>se.count_element_method("CCAD21D")
+    #   {'C': 2, 'A': 1, 'D':2}
+    #   >>>se.count_element_method("QWSASXFQ")
+    #   {'W': 2, 'Q': 2, 'F':1, 'A': 1, 'S': 2}
+    #   >>>se.count_element_method("")
+    #   {}
+    #   >>>se.count_element_method("123456")
+    #   {}
+    # '''
     for i in list(count_english.keys()):
         if count_english.get(i,0) ==count_english_values:
            del count_english[i]
@@ -92,11 +144,47 @@ def delete_method(count_english_values,count_english):
     return count_english
 
 def equal_method(count_english_values,count_english):
+    # '''
+    # Input : 
+    #   -input_english_value()의 결과값
+    #   -영어는 대문자만 있고 나머지는 상관없는 값
+    # Output :
+    #   -input값의 각각의 요소들의 개수를 계산하여 딕셔너리 형태의 결과 값
+    #   -대문자영어를 제외한 나머지 값들은 삭제됨
+    # Examples :
+    #   >>>import sort_english as se
+    #   >>>se.count_element_method("CCAD21D")
+    #   {'C': 2, 'A': 1, 'D':2}
+    #   >>>se.count_element_method("QWSASXFQ")
+    #   {'W': 2, 'Q': 2, 'F':1, 'A': 1, 'S': 2}
+    #   >>>se.count_element_method("")
+    #   {}
+    #   >>>se.count_element_method("123456")
+    #   {}
+    # '''
     for key,value in zip(count_english.keys(),count_english.values()):
             if value == count_english_values:
                 return key * value            
 
 def unequal_method(count_english_values,count_english):
+    # '''
+    # Input : 
+    #   -input_english_value()의 결과값
+    #   -영어는 대문자만 있고 나머지는 상관없는 값
+    # Output :
+    #   -input값의 각각의 요소들의 개수를 계산하여 딕셔너리 형태의 결과 값
+    #   -대문자영어를 제외한 나머지 값들은 삭제됨
+    # Examples :
+    #   >>>import sort_english as se
+    #   >>>se.count_element_method("CCAD21D")
+    #   {'C': 2, 'A': 1, 'D':2}
+    #   >>>se.count_element_method("QWSASXFQ")
+    #   {'W': 2, 'Q': 2, 'F':1, 'A': 1, 'S': 2}
+    #   >>>se.count_element_method("")
+    #   {}
+    #   >>>se.count_element_method("123456")
+    #   {}
+    # '''
     result = ""
     primary_count = []
     primary_english = []

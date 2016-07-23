@@ -1,4 +1,4 @@
-def input_number():
+def input_number_check(user_input):
     # '''
     # Input :
     #   -변수로써 받지 않고 input함수 사용하여 받을 것
@@ -16,8 +16,21 @@ def input_number():
     #   숫자들을 입력하세요. ex) 4C2 >> 4,2 : 4;2
     #   error
     # '''
-    front,back = input("숫자들을 입력하세요. ex) 4C2 >> 4,2 : ").split(",")
-    return [front,back]
+    if user_input == '0':
+        return True
+    try:
+        front,back = user_input.split(",")
+        front = int(front)
+        back = int(back)
+        if front<0 or back<0:
+            return False
+        elif front >= back:
+            return [front,back]
+        else:
+            return False
+
+    except:
+        return False
 
 def numerator_value_front_value_factorial(front):
     # '''
@@ -76,13 +89,22 @@ def denominator_value_back_value_factorial(back):
     return top
 
 def main():
-    
-    number_list = input_number()
-    numerator_value = numerator_value_front_value_factorial(number_list[0])
-    denominator_value_front_minus_back = denominator_value_front_minus_back_value_factorial(number_list[0],number_list[1])
-    denominator_value_back_value = denominator_value_back_value_factorial(number_list[1])
-    print(numerator_value/denominator_value_front_minus_back/denominator_value_back_value)
-    
+    check_user_input = 999
+
+    while(check_user_input != True):
+        user_input = input("숫자들을 입력하세요. ex) 4C2 >> 4,2 : 4,2")
+        check_user_input = input_number_check(user_input)
+        if check_user_input == False:
+            print("Input again, Please")
+        elif check_user_input==True:
+            print("Thank you for using this program")
+            break
+        else:
+            numerator_value = numerator_value_front_value_factorial(check_user_input[0])
+            denominator_value_front_minus_back = denominator_value_front_minus_back_value_factorial(check_user_input[0],check_user_input[1])
+            denominator_value_back_value = denominator_value_back_value_factorial(check_user_input[1])
+            print(numerator_value/denominator_value_front_minus_back/denominator_value_back_value)
+
 if __name__ == "__main__":
     main()
     
