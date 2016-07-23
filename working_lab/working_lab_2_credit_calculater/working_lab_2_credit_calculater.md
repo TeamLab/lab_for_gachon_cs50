@@ -1,24 +1,17 @@
-Working_Lab #1- Combination 계산기 (combination_calculator)
+Working_Lab #2- 가중 학점계산기 (Credit_calculater)
 =======
 Copyright 2016 © document created by TeamLab.Gachon@gmail.com
 
 ## Introduction
-이번 Lab은 처음으로 main 함수에서 control을 다룬다. 이때까지 모든 Lab은 단순히 단위 함수를 수정하거나, 약간의 main 함수 수정으로 1회성으로 진행하는 프로그램만 작성해 보았다. 이번 Lab은 사용자가 특정한 입력을 하기 전까지 프로그램이 계속 수행되기 위하여 Loop구문과 if문을 활용한 main함수를 작성해 본다. 처음이라 상당히 어렵게 느껴질 수도 있는데, 이 역시 시간이 지나가서 보면 쉬운 Lab 중 하나라는 생각이 들 것이다. 즐거운 마음으로 시작해보자.
+이번랩은 나중에 유용하게 쓸 수 있는 lab이다. 네이버가 망해서 학점계산기를 쓸 수 없을때 이걸 쓰면 학점계산을 할 수 있다. 또한 네이버에서 학점계산하는 친구들을 보면서 피식한번해주고 이번숙제로 계산해주길 바란다.
 
-## Combination Calculator Overview
-먼저 이번 숙제의 목적인 Combination 계산기에 대하여 알아보자. 한국어로는 "결합"으로도 번역되는 Combination은 factorial의 의미부터 알아야 이해하기 쉽다. factorial은 1 부터 n까지의 모든 자연수를 곱한 결과를 의미한다. 즉 n factorial은 `1 X 2 X 3 X ... X n`의 의미이며, 숫자기호로는 `n!`로 표시한다. Combination에서 nCr 인 경우는 n!/(r! * (n-r)!)이다. 즉 4C2에서 `4! / (2! * (4-2)!)`해서 `6`을 의미한다. 수학적으로 좀 유식하게 쓰면 아래처럼 표현하기도 한다(From wikipedia). 자세한 내용은 [wikipedia의 계승 페이지][1]를 참고하기 바란다.
-
-![Factorial 수학식](https://upload.wikimedia.org/math/6/3/a/63a0817e426d92a89470f75c4ad5bd0a.png) 
-
-실제 우리가 구현해야 할 프로그램은 아래 그림과 같다.
-
-![프로그램 실행 스크린샷](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_8_factorial_calculator/factorial_calculator_screen_shot.png)
-
+## Credit_calculater Overview
+이 숙제를 하기위해서는 일단 가중평균을 알아야한다. 가중평균이란 100원 짜리 배 2개와 200원 짜리 배 3개를 샀을 경우에, (100원x2개 + 200원x3개)/(2개+3개) = 140원 식으로 계산되는걸 말한다.(가격 및 개수 모두를 고려하여 평균함) 우리는 학점크기와 점수를 가지고 계산한다. (학점크기란 2학점, 3학점 점수란 4.5, 4.0, 3.5, 3.0, 2.5 를 말한다.)
 본 프로그램은 다음과 같이 세 가지 규칙에 의해 실행된다.
 
-1. 프로그램이 실행되어 사용자가 자연수,자연수를 입력하면 입력된 수의 Combination 값을 계산하여 출력한다. 즉 사용자가 `5,2`라고 입력하면 `10`이 다음줄에 출력되야 한다.
-2. 사용자가 자연수,자연수와 0이외 다른 문자나 뒤에 자연수가 앞에자연수보다 큰 수 를 입력하면 `Input again, Please`라는 글자가 출력되면서 다시 입력할 수 있도록 한다. 
-3. 사용자가 0을 입력하면 `Thank you for using this program`이라는 메세지를 출력하면서 종료한다. 
+1. 프로그램이 실행되어 사용자가 과목의 개수를 입력한 뒤 과목의 개수만큼 loop가 반복되면서 학점크기와 점수를 입력받는다. 입력받은 값들은 가중평균식(수강생이 할일)에 의해 평균이 구해지고 반환된다.
+2. 평균으로 그 사람이 어떤사람인지 정해주고 그 결과를 프린트 해준다. (이해가 안되도 된다. 밑에서 자세히 설명한다.)
+3. 초반 숙제이기 때문에 예외처리는 해주지 않는다.
 
 로직 자체는 상당히 간단하고, 이미 배운 내용들로 충분히 구현할 수 있다. 하지만, 처음 해보는 Control 숙제이기 때문에 상당히 어렵게 느껴질 것이다. 이번 Lab은 조금 자세히 설명하니 꼭 문서를 정독하길 바란다.
 
@@ -26,20 +19,20 @@ Copyright 2016 © document created by TeamLab.Gachon@gmail.com
 먼저 숙제 template 파일을 cs50 서버로부터 다운로드 받는다. 로그인 후 나타나는 `bash shell`에서 다음과 같은 명령을 입력하자.
 
 ```bash
-python3.4 submit_assignment.py -get factorial_calculator
+python3.4 submit_assignment.py -get credit_calculator
 ```  
 
-입력되면 다운로드 안내 메세지와 함께 `combination.py` 파일이 다운로드 된다.
+입력되면 다운로드 안내 메세지와 함께 `credit_calculator.py` 파일이 다운로드 된다.
 
-## factorial_calculator.py 파일 Overview
-`vim editor`로 `combination.py`을 열어 전체적인 개요를 보자. `vi combination.py`명령으로 파일을 열어보면 `main` 함수와 `input_number_check`, `numerator_value_front_value_factorial`, `denominator_value_front_minus_back_value_factorial`, `denominator_value_back_value_factorial`함수가 존재할 것이다. 본 Lab에서 수정 및 추가해야할 함수는 아래 다섯 가지이다.
+## credit_calculator.py 파일 Overview
+`vim editor`로 `credit_calculator.py`을 열어 전체적인 개요를 보자. `vi credit_calculator.py`명령으로 파일을 열어보면 `main` 함수와 `input_count_of_subject`, `score_of_subject_and_size_of_subject`, `calculate_standard_score`, `level_of_score`함수가 존재할 것이다. 본 Lab에서 수정 및 추가해야할 함수는 아래 다섯 가지이다.
 
 함수           | 설명 
 --------       | ---
-input_number_check| 문자열로 된 값을 입력받아, 해당 값이 '0' 이면 True를 반환하고 ','기준으로 split하여 두개의 변수에 할당이 되고 앞에 숫자가 뒤에숫자보다 크거나 같을 경우에는 2개의변수를 리스트형태로 반환한다. 만약 split, 할당, 뒤에숫자가 큰 경우에는 False를 반환한다.
-numerator_value_front_value_factorial| 0번째 위치에 있는 자연수를 입력받아 해당 자연수의 Factorial 값을 계산하여 반환한다. 즉 5를 입력받으면 120을 반환한다.
-denominator_value_front_minus_back_value_factorial| (n-r) 자연수를 입력받아 해당 자연수의 Factorial 값을 계산하여 반환한다. 즉 4,2를 입력받으면 2을 반환한다.
-denominator_value_back_value_factorial| 1번째 위치에 있는 자연수를 입력받아 해당 자연수의 Factorial 값을 계산하여 반환한다. 즉 3를 입력받으면 6을 반환한다.
+input_count_of_subject| 변수없는 함수인데 계산할 과목의 개수(문자형 정수값)를 입력받는다. 입력받을때 "과목의 수를 입력하시요. ex) 3 : "라는 문구를 띄어준다.
+score_of_subject_and_size_of_subject| 학점크기와 점수를 입력받는 함수인데 입력받는 형식은 3-4.5
+calculate_standard_score| (n-r) 자연수를 입력받아 해당 자연수의 Factorial 값을 계산하여 반환한다. 즉 4,2를 입력받으면 2을 반환한다.
+level_of_score| 1번째 위치에 있는 자연수를 입력받아 해당 자연수의 Factorial 값을 계산하여 반환한다. 즉 3를 입력받으면 6을 반환한다.
 main| 사용자가 값을 입력받아 Combination 값을 화면에 출력하도록 한다. 앞장 "Combination Calculator Overview"에 적힌 규칙에 따라 0을 입력하면 프로그램을 종료하고, 계산할 수 없는 값을 입력하면 다시 입력하도록 요청한다.
 
 각 함수별로 작성하는 방법을 살펴보자.
@@ -47,7 +40,7 @@ main| 사용자가 값을 입력받아 Combination 값을 화면에 출력하도
 ## input_number_check 함수 수정하기
 첫 번째 함수는 `input_number_check` 함수이다. 이미 template이 아래와 같이 작성되어 있다. 실제 코드에는 주석이 달려있지만, 설명을 위해 아래에는 생략했다.
 ```python
-def input_number_check(user_input):
+def is_positive_number(integer_str_value):
     # 주석생략
     try:
         # ===Modify codes below=============

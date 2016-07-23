@@ -42,17 +42,16 @@ def check_year(year):
     #   [31,30,31,30,31,30,31,31,30,31,30,31]
     #   >>> de.check_year(2016)
     #   [31,29,31,30,31,30,31,31,30,31,30,31]
-    #   >>> de.check_year(gachon)
+    #   >>> de.check_year(0)
     #   False
     # '''
-    try:
-        year = int(year)
-        if year % 4 == 0 and year % 100 !=0 or year % 400 ==0:
-            return is_yun_of_days
-        else:
-            return isnt_yun_of_days
-    except:
+    year = int(year)
+    if year<0:
         return False
+    elif year % 4 == 0 and year % 100 !=0 or year % 400 ==0:
+        return is_yun_of_days
+    else:
+        return isnt_yun_of_days
 
 def check_month(month):
     # '''
@@ -71,28 +70,24 @@ def check_month(month):
     #   11
     #   >>> de.check_month(1)
     #   0
-    #   >>> de.check_month(gachon)
+    #   >>> de.check_month(0)
     #   False
     # '''
-    try:
-        month = int(month)
-        if month <= 12 and month >=1:
-            return month-1
-        else:
-            return False
-    except:
+    month = int(month)
+    if month <= 12 and month >=1:
+        return month-1
+    else:
         return False
-        
 
 def main():
     year,month = input_year_month_value()
     check_year_value = check_year(year)
     check_month_value = check_month(month)
     if check_year_value == False or check_month_value == False:
-        print(year+"-"+month+" 는 올바른 값이 아닙니다.")
+        print(year+"-"+month+" 은 올바른 값이 아닙니다.")
     else:
         print(year+"-"+month+":"+str(check_year_value[check_month_value]))
     
         
 
-
+main()
