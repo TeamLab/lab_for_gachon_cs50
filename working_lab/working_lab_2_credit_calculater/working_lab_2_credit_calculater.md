@@ -61,24 +61,7 @@ main| 처음에 input_count_of_subject를 입력받아 그만큼 calculate_stand
 ## main 함수 수정하기
 마지막 함수는 `main`함수이다. `main`함수의 template는 아래와 같다.
 
-```python
-def main():
-    check_user_input = 999
-    # ===Modify codes below=============
-
-    # ==================================
-```
-
-참고로 본 Lab에서 설명하는 방법은 많은 구현 방법 중 하나일 뿐이다. 스스로 구현하는 방법이 있다면 그 방법대로 하면 된다. 아래 설명은 구현에 대한 대략적인 설명이다. loop문이나 if문에 대해 이해가 없이 시작하면 이해가 불가능하다. 설명을 이해한 후 스스로 코드를 작성해 보기 바란다. 
-`main`함수의 시작은 `check_user_input = 999`이다. `check_user_input`은 사용자가 입력한 값을 할당받는 변수이다. 만약 `check_user_input`이 필요없다고 생각되면 지워도 전혀 문제가 없다. `check_user_input = 999`인 이유는 while문에 진입하기 위해서다. 아래 설명에도 나오지만 본 lab에서는 while문에 종료조건은 `check_user_input`이 True인 경우이다. 제일 처음 시작을 위해 `check_user_input`에 `999`를 할당하였다.
-이미 설명이 된 부분이지만, Loop 구문에서 종료를 해야하는 횟수가 정해져 있지 않다면 `while` 문을 쓰는 것이 좋다. 여기에선 "사용자가 0을 입력하면 종료" 라는 조건이 있는 `while(check_user_input is not True):` 이라는 구문으로 시작하면 좋을 것이다. 
-`while`문을 실행한 후 처음 할 일은 사용자에게 입력을 받는 것이다. 입력을 받을 때는 `input("Input a positive number : ")` 문을 사용하면 되고, 입력된 값은 `user_input` 변수에 할당한다. 
-다음으로 입력된 값이 factorial 값을 계산할 수 있는지 확인하기 위해 if문과 `input_number_check` 함수를 사용한다. `if input_number_check(user_input):` 와 같이 쓰면 입력된 값이 '0'일 때는 `True`를, 계산이 안될 경우는 `False`를 반환하고 나머지경우에 계산을 수행한다.`(#이해가 안가요. 분기를 수행한다가 무슨뜻인지 모르겠습니다.)` 
-
-- 반환된 값이 `True`일 경우 프로그램을 종료한다. 또한 `Thank you for using this program`라는 문자열을 반드시 화면에 출력해주자.
-- 반환된 값이 `False`일 경우, `Input again, Please` 이라는 문자열을 출력해주자.
-- 나머지 경우는 계산된 값을 출력한후 user_input을 다시 물어보자.
-위의 설명은 상당히 복잡하다. 여러분들이 `if`, `while` 문에 대해서 기본적인 이해가 부족하다면 실제로 구현하기 어려울 것이다. 반드시 강의자료를 복습하고 실제 구현을 해보길 바란다.
+input_count_of_subject함수를 통하여 과목의 수를 입력받는다. 과목의 수를 변수로 넣어 score_of_subject_and_size_of_subject함수를 돌려 가중평균을 구해준다. 여기서 만들어진 가중평균을 통해 level_of_score함수의 결과 값을 반환해준다. 매우 쉽다. 
 
 ## 결과 출력하기 
 실제 코드가 다 작성되어 `python3.4 factorial_calculator.py` 아래와 같이 결과를 볼 수 있을 것이다. 당연히 입력 부분은 수강자가 직접 입력을 해주어야 프로그램 진행된다.

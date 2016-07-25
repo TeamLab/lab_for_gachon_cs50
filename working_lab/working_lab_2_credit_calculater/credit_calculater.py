@@ -89,6 +89,7 @@ def level_of_score(average_score):
     sum_of_denominator_value = 0
     if average_score >=4.5:
         result = "우등생"
+
     elif average_score >= 4.0:
         result = "준우등생"
 
@@ -100,6 +101,7 @@ def level_of_score(average_score):
     
     else:
         result = "노력부족"
+
     return result
     
 
