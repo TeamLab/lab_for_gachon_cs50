@@ -31,45 +31,32 @@ python3.4 submit_assignment.py -get credit_calculator
 --------       | ---
 input_count_of_subject| 변수없는 함수인데 계산할 과목의 개수(문자형 정수값)를 입력받는다. 입력받을때 "과목의 수를 입력하시요. ex) 3 : "라는 문구를 띄어준다.
 score_of_subject_and_size_of_subject| 학점크기와 점수를 입력받는 함수인데 입력받는 형식은 3-4.5
-calculate_standard_score| (n-r) 자연수를 입력받아 해당 자연수의 Factorial 값을 계산하여 반환한다. 즉 4,2를 입력받으면 2을 반환한다.
-level_of_score| 1번째 위치에 있는 자연수를 입력받아 해당 자연수의 Factorial 값을 계산하여 반환한다. 즉 3를 입력받으면 6을 반환한다.
-main| 사용자가 값을 입력받아 Combination 값을 화면에 출력하도록 한다. 앞장 "Combination Calculator Overview"에 적힌 규칙에 따라 0을 입력하면 프로그램을 종료하고, 계산할 수 없는 값을 입력하면 다시 입력하도록 요청한다.
+calculate_standard_score| input_count_of_subject함수에서 받은 과목의개수만큼 loop가 돌면서 score_of_subject_and_size_of_subject함수를 이용해 평균(가중평균)을 구해준다. 
+level_of_score| calculate_standard_score함수의 결과값을 점수별로 나누어 result에 사용자가 어떤사람인지 결과를 반환해준다. (밑에서 자세히 설명해준다.)
+main| 처음에 input_count_of_subject를 입력받아 그만큼 calculate_standard_score를 loop를 돌려 돌리만큼 score_of_subject_and_size_of_subject을 받아준다. 그 값을 level_of_score에 넣어 결과를 받아준다음 값을 띄어준다. 
 
 각 함수별로 작성하는 방법을 살펴보자.
 
-## input_number_check 함수 수정하기
-첫 번째 함수는 `input_number_check` 함수이다. 이미 template이 아래와 같이 작성되어 있다. 실제 코드에는 주석이 달려있지만, 설명을 위해 아래에는 생략했다.
-```python
-def is_positive_number(integer_str_value):
-    # 주석생략
-    try:
-        # ===Modify codes below=============
-        # 시작전 반드시 'pass'를 지울 것
-        pass
+## input_count_of_subject 함수 수정하기
+첫 번째 함수는 `input_count_of_subject` 함수이다. 이미 template이 아래와 같이 작성되어 있다. 실제 코드에는 주석이 달려있지만, 설명을 위해 아래에는 생략했다.
+생각을 해보자. 학점계산을 할때 몇과목을 할지 정해줘야 과목의 수만큼 점수와 학점을 넣어주고 과목의 수만큼 나눠줄 수 있다. 
+변수없는 함수인데 계산할 과목의 개수(문자형 정수값)를 입력받는다. 입력받을때 "과목의 수를 입력하시요. ex) 3 : "라는 문구를 띄어준다.
+앞에서 변수없는 함수를 입력받는법을 이미했다. 모르겠다면 돌아가보자.
 
-        # ==================================
-    except ValueError:
-        return False
-```
-여러분이 수정해야할 영역은 `pass`라고 적힌 부분이다. 보면 `try ~ except ValueError` 라는 부분이 보이는데 현재는 알 필요가 없는 "Exception Handling" 구문이다. Lab 작성을 위해 기본 template을 제시했으니 신경쓰지 말길 바란다. 본 함수에서의 역할은 형변환이 불가능할 경우와 split을 못할 경우 무조건 False를 반환하게 하는 것이다. 예를 들어 `"12321"` 라고 입력된 문자열 값을 `12321.split(",")` 라고 시도할 경우 무조건 본 함수에서 False를 return 하게 한다. 또한  `"ab,cd"` 라고 입력된 문자열 값을 `ab,cd.split(",")` 한 다음 `['ab','cd']` 2개의 값이 크기 비교가 안되면 False를 return 하게 한다.(즉 정수형이 아니면 False)
-본 함수의 기본 목적은 사용자가 입력한 값이 split이 가능한지 split을 한 다음 크기비교가 가능한지 보는 것이다. 본 함수는 `user_input`로 입력된다. `pass` 부분을 지우고 indentation에 맞춰서 `user_input`이 위에 조건에 부합하는지 확인하는 조건문을 `if`를 사용하여 작성해보기 바란다. 물론 사용자가 입력하는 값은 문자열이고 split 했을 때도 문자열이기 때문에 해당 값을 먼저 integer 값으로 변환해주어야 한다. 이미 알고 있겠지만 자연수라 함은 "1이상인 정수"를 의미한다. 
-다시 정리하면 본 함수에서는 
+## score_of_subject_and_size_of_subject 함수 작성하기
+두 번째 함수는 `score_of_subject_and_size_of_subject` 이다. 여기서는 한과목의 대한 학점의 크기와 점수를 넣어 주는 부분이다. 넣는 형식은 3-4.5 처럼 학점크기-나의점수이다.
+물론 걱정은 하지말자. 뒷부분에 한과목에 대한거 말고 여러과목을 넣어 줄수 있다.
 
-1. 입력된 user_input이 '0' 이면 True를 반환한다.
-2. ","기준으로 split을 해 두개의 변수에 할당이 불가능 하다면 False를 반환한다.
-3. 두개의 값이 하나라도 자연수가 아니거나 0번째값이 1번째 값보다 작다면 False를 반환한다.
+## calculate_standard_score 함수 작성하기
+세 번째 함수는 `calculate_standard_score` 이다. 본 함수는 `count_of_subject` 라는 자연수 값을 입력받아 그 자연수 만큼 for문을 반복하면서 점수입력(score_of_subject_and_size_of_subject)을 받는 동시에 점수의 평균도 점점 더 쌓아가는 함수이다. 
 
-split한다음 두개의 변수에 할당이 불가능할 경우, `try ~ catch` 문에 의해 자동으로 `False`를 반환하니 신경쓰지 말자. 위의 목적에 맞게 코드를 작성해 보자.
-
-## numerator_value_front_value_factorial 함수 작성하기
-두 번째 함수는 `numerator_value_front_value_factorial` 이다. 본 함수는 `front` 라는 자연수 값을 입력받아, 해당 값의 factorial 값을 반환한다. 이미 자연수로 변환된 값만 입력받기 때문에 위 `input_number_check` 함수처럼 입력된 값에 대한 확인을 할 필요가 없다. 
-Factorial 값을 구하기 위해서는 많은 방법이 있지만, for문을 활용하는 것이 가장 좋을 것으로 생각된다. for문을 사용하여 1부터 `front` 까지를 모두 곱하는 것이 가장 쉽다. 한가지 조심해야 하는 것은 integer_value을 사용하여 for문을 작성할 경우, 흔히 활용하는 `range(front)`구문을 쓰면 0부터 값이 시작되기 때문에 `range(1,front+1)`로 작성해줘야 한다. 물론 `range` 구문을 쓰는 것 말고도 factorial 값을 구할 수 있는 방법은 무궁무진하다. 수강자가 원하는 어떤 방법을 사용하든 입뎍된 `front`의 Factorial 값만 반환해주면 된다.
-
-## denominator_value_front_minus_back_value_factorial 함수 작성하기
-세 번째 함수는 `denominator_value_front_minus_back_value_factorial` 이다. 본 함수는 `front`, `back` 이라는 자연수 값을 입력받아, front-back 값의 factorial 값을 반환한다.
-
-## numerator_value_front_value_factorial 함수 작성하기
-네 번째 함수는 `numerator_value_front_value_factorial` 이다. 본 함수는 `back` 이라는 자연수 값을 입력받아, 해당 값의 factorial 값을 반환한다.
+## level_of_score 함수 작성하기
+네 번째 함수는 `level_of_score` 이다. 본 함수는 `average` 라는 float 값을 입력받아 해당 값이 해당하는 사람의 유형을 반환한다.
+1. 4.5이상 우등생
+2. 4.0이상 4.5 이하 준우등생
+3. 3.5이상 4.0 이하 정상인
+4. 3.0이상 3.5 이하 준정상인
+5. 나머지 노력부족
 
 ## main 함수 수정하기
 마지막 함수는 `main`함수이다. `main`함수의 template는 아래와 같다.
