@@ -9,7 +9,7 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 ## 숙제 template 파일 다운로드
 먼저 숙제 template 파일을 cs50 서버로부터 다운로드 받는다. 이미 해보았기 때문에 어렵지 않을 것이다. 명령은 아래와 같다.
 ```bash
-python3.4 submit_assignment.py -get vimeditor `(#여기 이상것같습니다! ->  -get vim_editor)`
+python3.4 submit_assignment.py -get vimeditor
 ```  
 
 파일을 간단히 보면 최상단의 "절대 수정하지 말 것" 이라고 적힌 3개의 변수와 4개의 수정해야 할 함수로 이루어져 있다. 각각의 함수를 수정하기 위해서는 상단의 3개의 변수를 각 함수로 copy&paste 한 후 lab assignment를 진행하여야 한다.
