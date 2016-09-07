@@ -111,7 +111,7 @@ encoding_sentence | 문자열 값으로 모스 부호로 변환이 가능한 영
 
 마지막 `encoding_sentence` 함수가 조금 이해하기 어려울 건데 다음 그림과 같다고 생각하면된다. 즉 `!`와 같은 문장부호는 삭제하고, 글자와 글자사이에는 한 칸의 여백을 단어와 단어 사이에는 두 칸의 여백을 줘서 모스부호를 출력하면 된다.
 
-![모스부호 출력 예시](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_10_morsecode/morsecode_example.png)
+![모스부호 출력 예시](https://github.com/TeamLab/lab_for_gachon_cs50/raw/master/lab_10_morsecode/morsecode_example.png)
 
 ## main 함수 수정하기 
 이번엔 메인함수이다. 이번 Lab의 메인함수는 비교적 간단하다. 다음이 기본 Template이다. 
@@ -175,7 +175,7 @@ Wrong Input
 
 실제 실행된 프로그램의 예제화면은 아래와 같다.
 
-![프로그램 실행 예시](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_10_morsecode/implementation_example.png)
+![프로그램 실행 예시](https://github.com/TeamLab/lab_for_gachon_cs50/raw/master/lab_10_morsecode/implementation_example.png)
 
 
 ## 숙제 제출하기

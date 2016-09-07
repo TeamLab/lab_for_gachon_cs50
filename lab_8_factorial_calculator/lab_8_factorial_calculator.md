@@ -12,7 +12,7 @@ Copyright 2015 © document created by TeamLab.Gachon@gmail.com
 
 실제 우리가 구현해야 할 프로그램은 아래 그림과 같다.
 
-![프로그램 실행 스크린샷](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/lab_8_factorial_calculator/factorial_calculator_screen_shot.png)
+![프로그램 실행 스크린샷](https://github.com/TeamLab/lab_for_gachon_cs50/raw/master/lab_8_factorial_calculator/factorial_calculator_screen_shot.png)
 
 본 프로그램은 다음과 같이 세 가지 규칙에 의해 실행된다.
 

@@ -136,7 +136,7 @@ def main():
 
 실제로 작성된 프로그램의 실행화면은 다음과 같다.
 
-![Stock Data Advance 실행화면 1](https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/ex_lab_2_stock_data_advance/stock_data_advance_screenshot.png)
+![Stock Data Advance 실행화면 1](https://github.com/TeamLab/lab_for_gachon_cs50/raw/master/ex_lab_2_stock_data_advance/stock_data_advance_screenshot.png)
 
 
 ## 숙제 제출하기
