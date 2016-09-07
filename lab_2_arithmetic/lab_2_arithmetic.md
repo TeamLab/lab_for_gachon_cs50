@@ -11,11 +11,7 @@ Gachon CS50 강의에서는 모든 숙제를 TeamLab에서 개발된 자동 채�
 ```bash
 wget https://raw.githubusercontent.com/TeamLab/lab_for_gachon_cs50/master/submit_assignment.py
 ```  
-다운로드 후 `ls submit_assignment.py` 이라고 입력하면 `submit_assignment.py`이라고 출력될 것이다. 윈도우즈 사용자의 경우 다음 링크를 클릭하면 다운로드 된다.
-
-> submit_assignment.py <U>[down][1]</U>  
-
-윈도우 사용자의 경우 일반적으로 다운로드 된 파일은 사용자 폴더내 "다운로드" 폴더로 이동하게 된다. <kbd>windows</kbd><sup id="windows">[3](#f3)</sup>+<kbd>e</kbd>를 누르면 일반적으로 왼쪽 상단에 나타나는 "다운로드" 폴더이므로 폴더에 다운로드 된 `submit_assignment.py` 파일을 작업 폴더로 이동한 후 작업하길 바란다.
+다운로드 후 `ls submit_assignment.py` 이라고 입력하면 `submit_assignment.py`이라고 출력될 것이다. 
 
 ## 숙제 template 파일 다운로드
 두 번째로 할일은 `submit_assignment.py` 파일로 우리가 숙제를 수행할 template 파일을 다운로드 하는 것이다. template 파일은 숙제 수행시 기본적으로 제공되는 코드 초안을 의미한다. 본 수업에서 사용되는 "Gachon Autograder" 프로그램은 template 파일에서 수강생이 핵심이 되는 부분만 수정하여 제출하면, 자동으로 제출 유무의 확인과 오류를 점검해준다. 
