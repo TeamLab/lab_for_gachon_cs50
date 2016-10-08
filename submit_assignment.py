@@ -20,8 +20,6 @@ import unittest
 
 TOKEN_PICKLE_FILE_NAME = "access_token"
 HOST = "cs50.gachon.ac.kr"
-#HOST = "cs50.gachon.ac.kr:8000"
-# HOST = "localhost:8000"
 
 def getArgumentsParser(argv=None):
     parser = argparse.ArgumentParser(

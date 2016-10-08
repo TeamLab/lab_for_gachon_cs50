@@ -25,12 +25,13 @@ def score_of_subject_and_size_of_subject():
     # Input :
     #   -변수로써 받지 않고 input함수 사용하여 받을 것
     #   -3학점짜리 과목을 4.5의 점수를 받았으면 4.5-3 으로 입력할 것   
-    # Output :
+    # Output :str(score), credit],
     #   -리스트형태로 반환할 것 
     # Examples : 
     #   >>> import credit_calculator as cc
     #   >>> cc.score_of_subject_and_size_of_subject()
-    #   학점과 학점크기를 입력하시오. ex) 4.0-3 :
+    #   학점과 학점크기를 입력하시오. ex) 4.0-3 :0
+
     #   학점과 학점크기를 입력하시오. ex) 4.0-3 : 4.0-3
     #   ['4.0', '3']
     #   >>> cc.score_of_subject_and_size_of_subject()
@@ -64,7 +65,7 @@ def calculate_standard_score(count_of_subject):
     for count in range(count_of_subject):
         number_list = score_of_subject_and_size_of_subject()
         sum_of_denominator_value += float(number_list[0])*int(number_list[1])
-        sum_of_numerator_value += float(number_list[0])
+        sum_of_numerator_value += float(number_list[1])
     return sum_of_denominator_value/sum_of_numerator_value
 
 def level_of_score(average_score):
@@ -86,7 +87,6 @@ def level_of_score(average_score):
     #   >>> cc.level_of_score(2.0)
     #   노력부족
     # ''' 
-    sum_of_denominator_value = 0
     if average_score >=4.5:
         result = "우등생"
 
@@ -112,8 +112,8 @@ def main():
     print(level_of_score(average_score))
 
 
+if __name__ == "__main__":
+    main()
 
 
 
-
-    

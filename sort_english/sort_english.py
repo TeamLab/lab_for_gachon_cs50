@@ -1,26 +1,3 @@
-def input_english_value():
-    # '''
-    # Input : 
-    #   -변수로써 받지 않고 input함수 사용하여 받을 것
-    #   -대소문자 구분없는 알파벳
-    # Output :
-    #   -대문자 알파벳
-    # Examples :
-    #   >>>import sort_english as se
-    #   >>>se.input_english_value()
-    #   영어를 입력해주세요. ex) CCBBAAA : 
-    #   영어를 입력해주세요. ex) CCBBAAA : ccbbaaa
-    #   CCBBAAA
-    #   영어를 입력해주세요. ex) CCBBAAA : 
-    #   영어를 입력해주세요. ex) CCBBAAA : SQsdq
-    #   SQSDQ
-    #   영어를 입력해주세요. ex) CCBBAAA : 
-    #   영어를 입력해주세요. ex) CCBBAAA : 123D12S
-    #   123D12S
-    # '''
-    user_value = input("영어를 입력해주세요. ex) CCBBAAA : ").upper()
-    return user_value
-
 def dict_of_english():
     # '''
     # Input : 
@@ -28,7 +5,7 @@ def dict_of_english():
     # Output :
     #   -알파벳의 우선순위를 구분할 수 있는 딕셔너리
     #   -알파벳은 영어대문자만 가능   
-    #   -알파벳 value 값은 구분만 할수 있으면 됨   
+    #   -알파벳 value 값은 오름차순
     # Examples :
     #   >>>import sort_english as se
     #   >>>se.dict_of_english()
@@ -69,6 +46,8 @@ def count_element_method(value):
             continue
         else:
             count_english[i]=value.count(i)
+    if len(count_english) == 0:
+        return False
     return count_english
 
 def max_method(count_english):
@@ -194,9 +173,14 @@ def main():
     user_input = 999
     print("Hello world")
     while(user_input != '0'):
+        user_input = input("영어를 입력해주세요. ex) CCBBAAA : ").upper()
         result = ""
-        user_input = input_english_value()
         count_english = count_element_method(user_input)
+        if user_input == '0':
+            break
+        if count_english == False:
+            print("Wrong input again")
+            continue
         for loop in set(count_english.values()):
             count_english_values = max_method(count_english)
             check_method_boolean = check_method(count_english_values,count_english)
@@ -206,26 +190,9 @@ def main():
             elif check_method_boolean == False:
                 result = result + unequal_method(count_english_values,count_english)
                 delete_method(count_english_values,count_english)
-        if len(result) == 0 and user_input != '0':
-            print("Wrong input again")
         print(result)
     print("Thank you for use this program")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-main()
+if __name__ == "__main__":
+    main()
