@@ -80,6 +80,7 @@ def check_month(month):
         return False
 
 def main():
+    print(input_year_month_value())
     year,month = input_year_month_value()
     check_year_value = check_year(year)
     check_month_value = check_month(month)
@@ -90,4 +91,5 @@ def main():
     
         
 
-main()
+if __name__ == "__main__":
+    main()

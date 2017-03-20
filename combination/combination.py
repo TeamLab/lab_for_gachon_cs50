@@ -25,7 +25,7 @@ def input_number_check(user_input):
         front,back = user_input.split(",")
         front = int(front)
         back = int(back)
-        if front<0 or back<0:
+        if front<=0 or back<0:
             return False
         elif front >= back:
             return [front,back]
