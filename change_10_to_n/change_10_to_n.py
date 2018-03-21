@@ -42,25 +42,10 @@ def convert_decimal_to_n(decimal_number, n):
     #
     # '''
     # ===Modify codes below=================
-<<<<<<< HEAD
-    convert_number = []
-
-    while decimal_number !=0:
-        convert_number.append(divmod(decimal_number,n)[1])
-        decimal_number = divmod(decimal_number,n)[0]
-    convert_number.reverse()
-    result=""
-    for num in convert_number:
-        result += str(num)
-    if result =="":
-        result = "0"
-    return result
-=======
     result= None
 
     return result
     # ======================================
->>>>>>> 59499bb17a47df1a42f63028e991f16323902b4c
 
 def is_yes(one_more_input):
     # '''
@@ -89,18 +74,11 @@ def is_yes(one_more_input):
     #   False
     # '''
     # ===Modify codes below=================
-<<<<<<< HEAD
-    if (one_more_input.upper() == "Y" or one_more_input.upper() == "YES"):
-        return True
-    else:
-        return False
-=======
     result = None
 
     return result
     # ======================================
 
->>>>>>> 59499bb17a47df1a42f63028e991f16323902b4c
 
 def is_no(one_more_input):
     # '''
@@ -129,17 +107,10 @@ def is_no(one_more_input):
     #   False
     # '''
     # ===Modify codes below=================
-<<<<<<< HEAD
-    if (one_more_input.upper() == "N" or one_more_input.upper() == "NO"):
-        return True
-    else:
-        return False
-=======
     result = None
 
     return result
     # ======================================
->>>>>>> 59499bb17a47df1a42f63028e991f16323902b4c
 
 
 def main():
@@ -147,38 +118,8 @@ def main():
     print("본 프로그램은 10진수를 n진수로 변환해주는 프로그램입니다.")
     print("======================================================")
     # ===Modify codes below=================
-<<<<<<< HEAD
-    while (True):
-        while (True):
-            raw_decimal = input("변환하고 싶은 숫자를 입력해 주세요 : ")
-            raw_number = input("몇 진수로 변환할 것 입니까? : ")
-            if is_positive_number(raw_decimal) == True and is_positive_number(raw_number) == True:
-                decimal = int(raw_decimal)
-                number = int(raw_number)
-                if number <= 1:
-                    print("다시 입력해주세요.")
-                    continue
-                else:
-                    print(convert_decimal_to_n(decimal, number))
-                    break
-            else:
-                print("다시 입력해주세요.")
-                continue
-        while(True):
-            b = input("다시 하겠습니까?(Y/N) ")
-            if (is_yes(b) == False and is_no(b) == False):
-                print("다시 입력해주세요.")
-                continue
-            else:
-                break
-        if is_yes(b) == True:
-            continue
-        else:
-            break
-=======
 
 
->>>>>>> 59499bb17a47df1a42f63028e991f16323902b4c
     # ======================================
     print("======================================================")
     print("프로그램이 종료 되었습니다.")
